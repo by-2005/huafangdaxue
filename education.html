@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教育教学 - 华方大学</title>
+    <link rel="icon" type="img/png" href="img/147.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+        [id] {
+            scroll-margin-top: 100px;
+        }
+        .content-section {
+            display: none;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        .content-section.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .menu-btn.active {
+            background-color: #3b82f6;
+            color: white;
+        }
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="font-sans text-neutral-700">
+    <!-- 顶部通知栏 -->
+    <div id="navbar"></div>
+
+    <!-- 教育教学内容 -->
+    <section class="py-16">
+        <div class="container mx-auto px-4 md:px-6" style="margin-top: 30px;">
+            <div class="text-center mb-12">
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-primary mb-4">教育教学</h2>
+                <p class="text-neutral-600 max-w-3xl mx-auto">华方大学始终坚持"中西融会、古今贯通、文理渗透"的办学风格，形成了"又红又专、全面发展"的育人特色。</p>
+            </div>
+            
+            <!-- 导航菜单 -->
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button data-target="overview" class="menu-btn active px-6 py-2 rounded-full bg-primary text-white font-medium">概览</button>
+                <button data-target="undergraduate" class="menu-btn px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors">本科生教育</button>
+                <button data-target="postgraduate" class="menu-btn px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors">研究生教育</button>
+                <button data-target="international" class="menu-btn px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors">留学生教育</button>
+                <button data-target="continuing" class="menu-btn px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors">继续教育</button>
+                <button data-target="courses" class="menu-btn px-6 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 transition-colors">课程中心</button>
+            </div>
+            
+            <!-- 内容区域 -->
+            <div id="content-container">
+                <!-- 概览页面 (默认显示) -->
+                <div id="overview" class="content-section active">
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                        <div class="bg-white rounded-lg shadow-md p-6 transform hover:-translate-y-2 transition-all duration-300">
+                            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                                <i class="fa fa-user-graduate text-primary text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-neutral-800 mb-3">本科生教育</h3>
+                            <p class="text-neutral-600 mb-4">华方大学本科生教育注重培养学生的综合素质和创新能力，提供丰富的课程和实践机会。</p>
+                            <div class="flex items-center text-sm text-neutral-500 mb-4">
+                                <i class="fa fa-calendar mr-2"></i>
+                                <span>学制：4年</span>
+                            </div>
+                            <button data-target="undergraduate" class="menu-btn w-full mt-4 px-4 py-2 bg-primary text-white rounded hover:bg-primary-dark transition-colors">查看详情</button>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg shadow-md p-6 transform hover:-translate-y-2 transition-all duration-300">
+                            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                                <i class="fa fa-graduation-cap text-primary text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-neutral-800 mb-3">研究生教育</h3>
+                            <p class="text-neutral-600 mb-4">华方大学研究生教育强调学术研究和创新能力培养，为学生提供良好的科研环境和导师指导。</p>
+                            <div class="flex items-center text-sm text-neutral-500 mb-4">
+                                <i class="fa fa-calendar mr-2"></i>
+                                <span>硕士：2-3年 | 博士：3-4年</span>
+                            </div>
+                            <button data-target="postgraduate" class="menu-btn w-full mt-4 px-4 py-2 bg-primary text-white rounded hover:bg-primary-dark transition-colors">查看详情</button>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg shadow-md p-6 transform hover:-translate-y-2 transition-all duration-300">
+                            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                                <i class="fa fa-globe text-primary text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-neutral-800 mb-3">留学生教育</h3>
+                            <p class="text-neutral-600 mb-4">华方大学留学生教育吸引了来自世界各地的学生，为他们提供了多元文化的学习和交流平台。</p>
+                            <div class="flex items-center text-sm text-neutral-500 mb-4">
+                                <i class="fa fa-calendar mr-2"></i>
+                                <span>全年滚动招生</span>
+                            </div>
+                            <button data-target="international" class="menu-btn w-full mt-4 px-4 py-2 bg-primary text-white rounded hover:bg-primary-dark transition-colors">查看详情</button>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg shadow-md p-6 transform hover:-translate-y-2 transition-all duration-300">
+                            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                                <i class="fa fa-book-open text-primary text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-neutral-800 mb-3">继续教育</h3>
+                            <p class="text-neutral-600 mb-4">华方大学继续教育为在职人员提供了提升自身素质和专业技能的机会，开设了多种培训课程和项目。</p>
+                            <div class="flex items-center text-sm text-neutral-500 mb-4">
+                                <i class="fa fa-calendar mr-2"></i>
+                                <span>春季班：3月开学 | 秋季班：9月开学</span>
+                            </div>
+                            <button data-target="continuing" class="menu-btn w-full mt-4 px-4 py-2 bg-primary text-white rounded hover:bg-primary-dark transition-colors">查看详情</button>
+                        </div>
+                        
+                        <div class="bg-white rounded-lg shadow-md p-6 transform hover:-translate-y-2 transition-all duration-300">
+                            <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                                <i class="fa fa-laptop-code text-primary text-2xl"></i>
+                            </div>
+                            <h3 class="text-xl font-bold text-neutral-800 mb-3">课程中心</h3>
+                            <p class="text-neutral-600 mb-4">华方大学课程中心提供丰富的在线课程资源，方便学生随时随地学习。</p>
+                            <div class="flex items-center text-sm text-neutral-500 mb-4">
+                                <i class="fa fa-calendar mr-2"></i>
+                                <span>全年开放</span>
+                            </div>
+                            <button data-target="courses" class="menu-btn w-full mt-4 px-4 py-2 bg-primary text-white rounded hover:bg-primary-dark transition-colors">查看详情</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 本科生教育页面 -->
+                <div id="undergraduate" class="content-section">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="p-8">
+                            <h2 class="text-3xl font-bold text-primary mb-6">本科生教育</h2>
+                            <div class="flex flex-col md:flex-row gap-8">
+                                <div class="md:w-2/3">
+                                    <h3 class="text-xl font-semibold mb-4 text-neutral-800 border-b pb-2">培养目标</h3>
+                                    <p class="mb-4">华方大学本科生教育致力于培养具有扎实专业知识、创新精神和国际视野的高素质人才。我们注重学生的全面发展，强调理论与实践相结合，培养能够适应社会发展需要的复合型人才。</p>
+                                    
+                                    <h3 class="text-xl font-semibold mb-4 text-neutral-800 border-b pb-2">特色项目</h3>
+                                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                                        <div class="bg-gray-50 p-4 rounded-lg">
+                                            <h4 class="font-medium text-primary mb-2">本科生科研训练计划</h4>
+                                            <ul class="text-sm space-y-1">
+                                                <li>国家级科研项目</li>
+                                                <li>省级科研项目</li>
+                                                <li>校级科研项目</li>
+                                            </ul>
+                                        </div>
+                                        <div class="bg-gray-50 p-4 rounded-lg">
+                                            <h4 class="font-medium text-primary mb-2">国际交流项目</h4>
+                                            <ul class="text-sm space-y-1">
+                                                <li>学期交换项目</li>
+                                                <li>暑期学校</li>
+                                                <li>双学位项目</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                    
+                                    <h3 class="text-xl font-semibold mb-4 text-neutral-800 border-b pb-2">专业设置</h3>
+                                    <div class="overflow-x-auto">
+                                        <table class="min-w-full bg-white border">
+                                            <thead>
+                                                <tr class="bg-gray-100">
+                                                    <th class="py-2 px-4 border">学科门类</th>
+                                                    <th class="py-2 px-4 border">专业数量</th>
+                                                    <th class="py-2 px-4 border">热门专业</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="py-2 px-4 border text-center">理学</td>
+                                                    <td class="py-2 px-4 border text-center">12</td>
+                                                    <td class="py-2 px-4 border text-center">数学与应用数学、物理学</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="py-2 px-4 border text-center">工学</td>
+                                                    <td class="py-2 px-4 border text-center">18</td>
+                                                    <td class="py-2 px-4 border text-center">计算机科学与技术、电子信息工程</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="py-2 px-4 border text-center">文学</td>
+                                                    <td class="py-2 px-4 border text-center">8</td>
+                                                    <td class="py-2 px-4 border text-center">汉语言文学、英语</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                                
+                                <div class="md:w-1/3">
+                                    <div class="bg-primary/5 p-6 rounded-lg border border-primary/20">
+                                        <h3 class="text-xl font-semibold mb-4 text-primary">教学成果</h3>
+                                        <div class="space-y-4">
+                                            <div class="bg-white p-4 rounded shadow-sm">
+                                                <h4 class="font-medium mb-1">就业率</h4>
+                                                <div class="flex items-center">
+                                                    <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                                        <div class="bg-primary h-2.5 rounded-full" style="width: 98%"></div>
+                                                    </div>
+                                                    <span class="ml-2 text-sm">98%</span>
+                                                </div>
+                                            </div>
+                                            <div class="bg-white p-4 rounded shadow-sm">
+                                                <h4 class="font-medium mb-1">深造率</h4>
+                                                <div class="flex items-center">
+                                                    <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                                        <div class="bg-primary h-2.5 rounded-full" style="width: 85%"></div>
+                                                    </div>
+                                                    <span class="ml-2 text-sm">85%</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="mt-8">
+                                            <h3 class="text-xl font-semibold mb-4 text-primary">联系方式</h3>
+                                            <div class="space-y-3">
+                                                <div class="flex items-center">
+                                                    <i class="fa fa-phone text-primary mr-3"></i>
+                                                    <span>本科生院：010-12345678</span>
+                                                </div>
+                                                <div class="flex items-center">
+                                                    <i class="fa fa-envelope text-primary mr-3"></i>
+                                                    <span>huafangdaxue@outlook.com</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 研究生教育页面 -->
+                <div id="postgraduate" class="content-section">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="p-8">
+                            <h2 class="text-3xl font-bold text-primary mb-6">研究生教育</h2>
+                            
+                            <div class="flex mb-8 border-b">
+                                <button data-tab="master" class="tab-btn px-6 py-2 font-medium border-b-2 border-transparent hover:text-primary transition-colors active">硕士研究生</button>
+                                <button data-tab="doctor" class="tab-btn px-6 py-2 font-medium border-b-2 border-transparent hover:text-primary transition-colors">博士研究生</button>
+                            </div>
+                            
+                            <div id="master" class="tab-content active">
+                                <div class="grid md:grid-cols-3 gap-8 mb-8">
+                                    <div class="bg-gray-50 p-6 rounded-lg">
+                                        <h3 class="text-xl font-semibold mb-4 text-primary">招生规模</h3>
+                                        <p class="mb-2">2023年计划招收：</p>
+                                        <ul class="space-y-2">
+                                            <li class="flex items-center">
+                                                <i class="fa fa-check-circle text-primary mr-2"></i>
+                                                <span>学术型硕士：1500人</span>
+                                            </li>
+                                            <li class="flex items-center">
+                                                <i class="fa fa-check-circle text-primary mr-2"></i>
+                                                <span>专业型硕士：1300人</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="bg-gray-50 p-6 rounded-lg">
+                                        <h3 class="text-xl font-semibold mb-4 text-primary">培养模式</h3>
+                                        <ul class="space-y-2">
+                                            <li class="flex items-center">
+                                                <i class="fa fa-check-circle text-primary mr-2"></i>
+                                                <span>导师负责制</span>
+                                            </li>
+                                            <li class="flex items-center">
+                                                <i class="fa fa-check-circle text-primary mr-2"></i>
+                                                <span>课程学习+科研训练</span>
+                                            </li>
+                                            <li class="flex items-center">
+                                                <i class="fa fa-check-circle text-primary mr-2"></i>
+                                                <span>学术交流与国际合作</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="bg-gray-50 p-6 rounded-lg">
+                                        <h3 class="text-xl font-semibold mb-4 text-primary">学位授权</h3>
+                                        <ul class="space-y-2">
+                                            <li class="flex items-center">
+                                                <i class="fa fa-check-circle text-primary mr-2"></i>
+                                                <span>硕士学位授权一级学科：45个</span>
+                                            </li>
+                                            <li class="flex items-center">
+                                                <i class="fa fa-check-circle text-primary mr-2"></i>
+                                                <span>专业学位授权类别：28种</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <h3 class="text-xl font-semibold mb-4 text-neutral-800 border-b pb-2">特色项目</h3>
+                                <div class="grid md:grid-cols-3 gap-4 mb-8">
+                                    <div class="p-4 border-l-4 border-primary bg-gray-50">
+                                        <h4 class="font-semibold">直博项目</h4>
+                                        <p class="text-sm text-gray-600">优秀本科生可直接攻读博士学位，缩短培养周期。</p>
+                                    </div>
+                                    <div class="p-4 border-l-4 border-primary bg-gray-50">
+                                        <h4 class="font-semibold">国际联合培养</h4>
+                                        <p class="text-sm text-gray-600">与海外知名高校联合培养研究生，双学位授予。</p>
+                                    </div>
+                                    <div class="p-4 border-l-4 border-primary bg-gray-50">
+                                        <h4 class="font-semibold">产学研联合培养</h4>
+                                        <p class="text-sm text-gray-600">与企业合作培养应用型高层次人才。</p>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div id="doctor" class="tab-content">
+                                <div class="grid md:grid-cols-3 gap-8 mb-8">
+                                    <div class="bg-gray-50 p-6 rounded-lg">
+                                        <h3 class="text-xl font-semibold mb-4 text-primary">招生规模</h3>
+                                        <p class="mb-2">2023年计划招收：</p>
+                                        <ul class="space-y-2">
+                                            <li class="flex items-center">
+                                                <i class="fa fa-check-circle text-primary mr-2"></i>
+                                                <span>学术型博士：800人</span>
+                                            </li>
+                                            <li class="flex items-center">
+                                                <i class="fa fa-check-circle text-primary mr-2"></i>
+                                                <span>专业型博士：200人</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="bg-gray-50 p-6 rounded-lg">
+                                        <h3 class="text-xl font-semibold mb-4 text-primary">培养特色</h3>
+                                        <ul class="space-y-2">
+                                            <li class="flex items-center">
+                                                <i class="fa fa-check-circle text-primary mr-2"></i>
+                                                <span>导师组指导制度</span>
+                                            </li>
+                                            <li class="flex items-center">
+                                                <i class="fa fa-check-circle text-primary mr-2"></i>
+                                                <span>国际化培养方案</span>
+                                            </li>
+                                            <li class="flex items-center">
+                                                <i class="fa fa-check-circle text-primary mr-2"></i>
+                                                <span>跨学科交叉培养</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="bg-gray-50 p-6 rounded-lg">
+                                        <h3 class="text-xl font-semibold mb-4 text-primary">学位授权</h3>
+                                        <ul class="space-y-2">
+                                            <li class="flex items-center">
+                                                <i class="fa fa-check-circle text-primary mr-2"></i>
+                                                <span>博士学位授权一级学科：32个</span>
+                                            </li>
+                                            <li class="flex items-center">
+                                                <i class="fa fa-check-circle text-primary mr-2"></i>
+                                                <span>专业学位授权类别：5种</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                
+                                <h3 class="text-xl font-semibold mb-4 text-neutral-800 border-b pb-2">科研支撑</h3>
+                                <p class="text-neutral-600 mb-4">华方大学为研究生提供充足的科研经费和先进的实验设备，建立了多个国家级和省部级重点实验室，为研究生的科研工作提供有力保障。</p>
+                                <div class="bg-primary/10 p-4 rounded-lg mb-8">
+                                    <div class="flex justify-between text-sm mb-2">
+                                        <span>科研经费</span>
+                                        <span>年均3.2亿元</span>
+                                    </div>
+                                    <div class="w-full bg-gray-200 rounded-full h-2.5">
+                                        <div class="bg-primary h-2.5 rounded-full" style="width: 85%"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 留学生教育页面 -->
+                <div id="international" class="content-section">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="p-8">
+                            <h2 class="text-3xl font-bold text-primary mb-6">留学生教育</h2>
+                            
+                            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-4 text-neutral-800">项目类型</h3>
+                                    <div class="space-y-4">
+                                        <div class="bg-gray-50 p-4 rounded-lg">
+                                            <h4 class="font-medium text-primary mb-2">学位项目</h4>
+                                            <ul class="text-sm space-y-1">
+                                                <li>本科项目(4-6年)</li>
+                                                <li>硕士项目(2-3年)</li>
+                                                <li>博士项目(3-4年)</li>
+                                            </ul>
+                                        </div>
+                                        <div class="bg-gray-50 p-4 rounded-lg">
+                                            <h4 class="font-medium text-primary mb-2">非学位项目</h4>
+                                            <ul class="text-sm space-y-1">
+                                                <li>交换项目(1-2学期)</li>
+                                                <li>短期项目(2-8周)</li>
+                                                <li>汉语进修(1-2年)</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-4 text-neutral-800">申请流程</h3>
+                                    <div class="relative">
+                                        <div class="absolute left-4 h-full w-0.5 bg-gray-200"></div>
+                                        <div class="space-y-6">
+                                            <div class="relative pl-10">
+                                                <div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center">
+                                                    1
+                                                </div>
+                                                <h4 class="font-medium">在线申请</h4>
+                                                <p class="text-sm text-gray-600 mt-1">通过国际学生在线服务系统提交申请材料</p>
+                                            </div>
+                                            <div class="relative pl-10">
+                                                <div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center">
+                                                    2
+                                                </div>
+                                                <h4 class="font-medium">材料审核</h4>
+                                                <p class="text-sm text-gray-600 mt-1">招生办公室审核申请材料</p>
+                                            </div>
+                                            <div class="relative pl-10">
+                                                <div class="absolute left-0 top-0 w-8 h-8 rounded-full bg-primary text-white flex items-center justify-center">
+                                                    3
+                                                </div>
+                                                <h4 class="font-medium">录取通知</h4>
+                                                <p class="text-sm text-gray-600 mt-1">发放录取通知书和JW202表</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-blue-50 p-6 rounded-lg border border-blue-100">
+                                <h3 class="text-xl font-semibold mb-4 text-primary">奖学金信息</h3>
+                                <div class="grid md:grid-cols-3 gap-6">
+                                    <div class="bg-white p-4 rounded shadow-sm">
+                                        <h4 class="font-medium mb-2">中国政府奖学金</h4>
+                                        <p class="text-sm text-gray-600">全额奖学金，包含学费、住宿费、生活费等</p>
+                                    </div>
+                                    <div class="bg-white p-4 rounded shadow-sm">
+                                        <h4 class="font-medium mb-2">华方大学奖学金</h4>
+                                        <p class="text-sm text-gray-600">学费减免50%-100%</p>
+                                    </div>
+                                    <div class="bg-white p-4 rounded shadow-sm">
+                                        <h4 class="font-medium mb-2">孔子学院奖学金</h4>
+                                        <p class="text-sm text-gray-600">汉语进修生专项奖学金</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 继续教育页面 -->
+                <div id="continuing" class="content-section">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="p-8">
+                            <h2 class="text-3xl font-bold text-primary mb-6">继续教育</h2>
+                            
+                            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-4 text-neutral-800">项目分类</h3>
+                                    <div class="space-y-4">
+                                        <div class="bg-gray-50 p-4 rounded-lg">
+                                            <h4 class="font-medium text-primary mb-2">学历继续教育</h4>
+                                            <ul class="text-sm space-y-1">
+                                                <li>成人高等教育（函授、业余）</li>
+                                                <li>网络教育</li>
+                                                <li>自学考试助学</li>
+                                            </ul>
+                                        </div>
+                                        <div class="bg-gray-50 p-4 rounded-lg">
+                                            <h4 class="font-medium text-primary mb-2">非学历继续教育</h4>
+                                            <ul class="text-sm space-y-1">
+                                                <li>高级研修班</li>
+                                                <li>行业培训</li>
+                                                <li>职业技能培训</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-4 text-neutral-800">教学特色</h3>
+                                    <div class="flex flex-wrap gap-2 mb-4">
+                                        <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">灵活学制</span>
+                                        <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">线上线下结合</span>
+                                        <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">实践导向</span>
+                                        <span class="px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm">名师授课</span>
+                                    </div>
+                                    
+                                    <h3 class="text-xl font-semibold mb-4 text-neutral-800">学员数据</h3>
+                                    <div class="grid grid-cols-3 gap-4">
+                                        <div class="bg-primary/10 p-3 rounded-lg text-center">
+                                            <div class="text-xl font-bold text-primary">15000+</div>
+                                            <div class="text-xs text-gray-600">年培训人次</div>
+                                        </div>
+                                        <div class="bg-primary/10 p-3 rounded-lg text-center">
+                                            <div class="text-xl font-bold text-primary">200+</div>
+                                            <div class="text-xs text-gray-600">合作企业</div>
+                                        </div>
+                                        <div class="bg-primary/10 p-3 rounded-lg text-center">
+                                            <div class="text-xl font-bold text-primary">50+</div>
+                                            <div class="text-xs text-gray-600">培训项目</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="bg-gray-50 p-6 rounded-lg">
+                                <h3 class="text-xl font-semibold mb-4 text-primary">报名方式</h3>
+                                <div class="grid md:grid-cols-2 gap-6">
+                                    <div>
+                                        <h4 class="font-medium mb-2">在线报名</h4>
+                                        <p class="text-sm text-gray-600 mb-2">通过继续教育学院官网在线报名系统提交申请</p>
+                                        <button class="px-4 py-2 bg-primary text-white rounded text-sm hover:bg-primary-dark transition-colors">立即报名</button>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-medium mb-2">现场报名</h4>
+                                        <p class="text-sm text-gray-600">华方大学继续教育学院招生办公室（主楼A座101室）</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- 课程中心页面 -->
+                <div id="courses" class="content-section">
+                    <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                        <div class="p-8">
+                            <h2 class="text-3xl font-bold text-primary mb-6">课程中心</h2>
+                            
+                            <div class="grid md:grid-cols-2 gap-8 mb-8">
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-4 text-neutral-800">课程资源</h3>
+                                    <div class="mb-6">
+                                        <div class="flex items-center justify-between mb-1">
+                                            <span class="text-sm">国家级精品课程</span>
+                                            <span class="font-medium">25门</span>
+                                        </div>
+                                        <div class="w-full bg-gray-200 rounded-full h-2.5 mb-3">
+                                            <div class="bg-primary h-2.5 rounded-full" style="width: 70%"></div>
+                                        </div>
+                                        
+                                        <div class="flex items-center justify-between mb-1">
+                                            <span class="text-sm">省级精品课程</span>
+                                            <span class="font-medium">60门</span>
+                                        </div>
+                                        <div class="w-full bg-gray-200 rounded-full h-2.5 mb-3">
+                                            <div class="bg-primary h-2.5 rounded-full" style="width: 85%"></div>
+                                        </div>
+                                        
+                                        <div class="flex items-center justify-between mb-1">
+                                            <span class="text-sm">校级精品课程</span>
+                                            <span class="font-medium">150门</span>
+                                        </div>
+                                        <div class="w-full bg-gray-200 rounded-full h-2.5 mb-3">
+                                            <div class="bg-primary h-2.5 rounded-full" style="width: 90%"></div>
+                                        </div>
+                                    </div>
+                                    
+                                    <h3 class="text-xl font-semibold mb-4 text-neutral-800">特色功能</h3>
+                                    <ul class="list-disc pl-5 text-neutral-600 space-y-2">
+                                        <li>课程直播与录播</li>
+                                        <li>在线测验与考试</li>
+                                        <li>作业提交与批改</li>
+                                        <li>学习进度跟踪</li>
+                                    </ul>
+                                </div>
+                                
+                                <div>
+                                    <h3 class="text-xl font-semibold mb-4 text-neutral-800">平台特点</h3>
+                                    <div class="grid grid-cols-2 gap-4 mb-6">
+                                        <div class="p-3 border rounded-lg text-center">
+                                            <i class="fa fa-mobile-alt text-primary text-xl mb-2"></i>
+                                            <div class="text-sm font-medium">多终端支持</div>
+                                        </div>
+                                        <div class="p-3 border rounded-lg text-center">
+                                            <i class="fa fa-chart-line text-primary text-xl mb-2"></i>
+                                            <div class="text-sm font-medium">学习分析</div>
+                                        </div>
+                                        <div class="p-3 border rounded-lg text-center">
+                                            <i class="fa fa-users text-primary text-xl mb-2"></i>
+                                            <div class="text-sm font-medium">互动社区</div>
+                                        </div>
+                                        <div class="p-3 border rounded-lg text-center">
+                                            <i class="fa fa-cloud text-primary text-xl mb-2"></i>
+                                            <div class="text-sm font-medium">云存储</div>
+                                        </div>
+                                    </div>
+                                    
+                                    <h3 class="text-xl font-semibold mb-4 text-neutral-800">使用指南</h3>
+                                    <div class="bg-gray-50 p-4 rounded-lg">
+                                        <h4 class="font-medium mb-2">登录方式</h4>
+                                        <p class="text-sm text-gray-600 mb-3">使用学校统一身份认证账号登录课程中心平台</p>
+                                        <button class="px-4 py-2 bg-primary text-white rounded text-sm hover:bg-primary-dark transition-colors">进入课程中心</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <div id="footer"></div>
+
+    <script>
+        // script.js
+        function insertNavbarAndFooter() {
+            // 加载导航栏
+            fetch('navbar.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('navbar').innerHTML = html;
+                })
+                .catch(err => console.error('加载导航栏失败:', err));
+        
+            // 加载页脚
+            fetch('footer.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('footer').innerHTML = html;
+                })
+                .catch(err => console.error('加载页脚失败:', err));
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // 加载导航栏和页脚
+            insertNavbarAndFooter();
+            
+            // 单页应用导航功能
+            const menuButtons = document.querySelectorAll('.menu-btn');
+            const contentSections = document.querySelectorAll('.content-section');
+            
+            // 标签页切换功能
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            // 初始化显示概览页面
+            showContent(getInitialSection());
+            
+            // 为菜单按钮添加点击事件
+            menuButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const target = this.getAttribute('data-target');
+                    showContent(target);
+                    updateURL(target);
+                    updateActiveButton(this);
+                });
+            });
+            
+            // 为标签页按钮添加点击事件
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const target = this.getAttribute('data-tab');
+                    showTab(target);
+                    updateActiveTabButton(this);
+                });
+            });
+            
+            // 检查URL哈希并显示对应内容
+            window.addEventListener('hashchange', checkHash);
+            
+            function getInitialSection() {
+                const hash = window.location.hash.substring(1);
+                return hash || 'overview';
+            }
+            
+            function checkHash() {
+                const target = getInitialSection();
+                showContent(target);
+                
+                // 更新对应按钮样式
+                menuButtons.forEach(btn => {
+                    if(btn.getAttribute('data-target') === target) {
+                        updateActiveButton(btn);
+                    }
+                });
+            }
+            
+            function showContent(target) {
+                contentSections.forEach(section => {
+                    section.classList.remove('active');
+                    if(section.id === target) {
+                        section.classList.add('active');
+                    }
+                });
+            }
+            
+            function showTab(target) {
+                tabContents.forEach(content => {
+                    content.classList.remove('active');
+                    if(content.id === target) {
+                        content.classList.add('active');
+                    }
+                });
+            }
+            
+            function updateActiveButton(activeButton) {
+                menuButtons.forEach(btn => {
+                    btn.classList.remove('active', 'bg-primary', 'text-white');
+                    btn.classList.add('border', 'text-primary', 'hover:bg-primary/10');
+                });
+                
+                activeButton.classList.remove('border', 'text-primary', 'hover:bg-primary/10');
+                activeButton.classList.add('active', 'bg-primary', 'text-white');
+            }
+            
+            function updateActiveTabButton(activeButton) {
+                tabButtons.forEach(btn => {
+                    btn.classList.remove('active', 'border-primary', 'text-primary');
+                    btn.classList.add('border-transparent');
+                });
+                
+                activeButton.classList.add('active', 'border-primary', 'text-primary');
+                activeButton.classList.remove('border-transparent');
+            }
+            
+            function updateURL(target) {
+                if(target !== 'overview') {
+                    window.history.pushState(null, null, `#${target}`);
+                } else {
+                    window.history.pushState(null, null, window.location.pathname);
+                }
+            }
+        });
+    </script>
+</body>
+</html>

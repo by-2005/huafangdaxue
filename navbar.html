@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>华方大学</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="script.js"></script>
+</head>
+<body class="font-sans text-neutral-700">
+   
+    <!-- 导航栏 -->
+    <nav id="main-nav" class="bg-blue-500  bg-blur transition-navbar shadow-sm fixed left-0 right-0 z-50">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex justify-between items-center py-4">
+				
+                <!-- Logo -->
+                <div class="flex items-center space-x-3">
+                    <img src="img/14.png" alt="华方大学校徽" class="h-12 w-auto">
+                    <!-- <div>
+                        <h1 class="text-primary font-bold text-xl md:text-2xl">华方大学</h1>
+                        <p class="text-neutral-500 text-xs md:text-sm">HuaFang University</p>
+                    </div> -->
+                </div>
+
+                <!-- 桌面导航菜单 -->
+                <div class="hidden md:flex items-center space-x-1">
+                    <a href="index.html" class="px-3 py-2 text-primary font-medium hover:text-secondary transition-colors">首页</a>
+                    
+                    <!-- 桌面导航 - 学校概况下拉菜单 -->
+                    <div class="relative group">
+                        <button class="px-3 py-2 text-primary font-medium hover:text-secondary transition-colors flex items-center">
+                            学校概况 <i class="fa fa-angle-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <a href="about.html#intro" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-primary hover:text-white">学校简介</a>
+                            <a href="about.html#history" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-primary hover:text-white">历史沿革</a>
+                            <a href="about.html#past-leaders" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-primary hover:text-white">历任领导</a>
+                            <a href="about.html#current-leaders" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-primary hover:text-white">现任领导</a>
+                            <a href="about.html#organization" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-primary hover:text-white">组织机构</a>
+                        </div>
+                    </div>
+                    
+                    <!-- 教育教学下拉菜单 -->
+                    <div class="relative group">
+                        <button class="px-3 py-2 text-primary font-medium hover:text-secondary transition-colors flex items-center">
+                            教育教学 <i class="fa fa-angle-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+							<a href="education.html#overview" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-primary hover:text-white">概览</a>
+                            <a href="education.html#undergraduate" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-primary hover:text-white">本科生教育</a>
+                            <a href="education.html#postgraduate" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-primary hover:text-white">研究生教育</a>
+                            <a href="education.html#international" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-primary hover:text-white">留学生教育</a>
+                            <a href="education.html#continuing" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-primary hover:text-white">继续教育</a>
+                            <a href="education.html#courses" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-primary hover:text-white">课程中心</a>
+                        </div>
+                    </div>
+                    
+                    <!-- 学科科研下拉菜单 -->
+                    <div class="relative group">
+                        <button class="px-3 py-2 text-primary font-medium hover:text-secondary transition-colors flex items-center">
+                            学科科研 <i class="fa fa-angle-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <a href="research.html#discipline" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-primary hover:text-white">学科建设</a>
+                            <a href="research.html#institutions" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-primary hover:text-white">科研机构</a>
+                            <a href="research.html#projects" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-primary hover:text-white">科研项目</a>
+                            <a href="research.html#achievements" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-primary hover:text-white">科研成果</a>
+                            <a href="research.html#journals" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-primary hover:text-white">学术期刊</a>
+							<a href="research.html#colleges" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-primary hover:text-white">学院设置</a>
+                        </div>
+                    </div>
+                    
+                    <!-- 师资队伍下拉菜单 -->
+                    <div class="relative group">
+                        <button class="px-3 py-2 text-primary font-medium hover:text-secondary transition-colors flex items-center">
+                            师资队伍 <i class="fa fa-angle-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <a href="faculty.html#overview" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-primary hover:text-white">师资概况</a>
+                            <a href="faculty.html#academicians" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-primary hover:text-white">两院院士</a>
+                            <a href="faculty.html#talents" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-primary hover:text-white">杰出人才</a>
+                            <a href="faculty.html#recruitment" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-primary hover:text-white">教师招聘</a>
+                            <a href="faculty.html#services" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-primary hover:text-white">教师服务</a>
+							<a href="faculty.html#alumni" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-primary hover:text-white">优秀校友</a>
+                        </div>
+                    </div>
+                    
+                    <!-- 学生服务下拉菜单 -->
+                    <div class="relative group">
+                        <button class="px-3 py-2 text-primary font-medium hover:text-secondary transition-colors flex items-center">
+                            学生服务 <i class="fa fa-angle-down ml-1 text-xs"></i>
+                        </button>
+                        <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                            <a href="campus-life.html#student-affairs" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-primary hover:text-white">学生事务</a>
+                            <a href="campus-life.html#awards" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-primary hover:text-white">奖助体系</a>
+                            <a href="campus-life.html#mental-health" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-primary hover:text-white">心理健康</a>
+                            <a href="campus-life.html#career-guidance" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-primary hover:text-white">就业指导</a>
+                            <a href="campus-life.html#campus-life" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-primary hover:text-white">校园生活</a>
+                        </div>
+                    </div>
+					
+
+                    
+                    <!-- 招生就业下拉菜单 -->
+                    <div class="relative group">
+                        <button class="px-3 py-2 text-primary font-medium hover:text-secondary transition-colors flex items-center">
+                            招生就业 <i class="fa fa-angle-down ml-1 text-xs"></i>
+                        </button>
+                       <div class="absolute left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-1 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+                           <a href="admissions.html#undergraduate" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-primary hover:text-white">本科生招生</a>
+                           <a href="admissions.html#postgraduate" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-primary hover:text-white">研究生招生</a>
+                           <a href="admissions.html#international" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-primary hover:text-white">留学生招生</a>
+                           <a href="admissions.html#continuing" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-primary hover:text-white">继续教育招生</a>
+                           <a href="admissions.html#employment" class="block px-4 py-2 text-sm text-neutral-700 hover:bg-primary hover:text-white">就业信息</a>
+                       </div>
+                    </div>
+                </div>
+				
+<p>热烈庆祝华方大学建校114周年 | <a href="celebration.html" class="underline hover:text-secondary transition-colors">校庆专题网站</a></p>
+                <!-- 搜索栏和语言切换 -->
+                <div class="hidden md:flex items-center space-x-4">
+                    <div class="relative">
+                        <input type="text" placeholder="搜索..." class="py-1 px-3 pr-8 rounded-full border border-neutral-300 focus:outline-none focus:ring-2 focus:ring-primary/50 text-sm w-40">
+                        <button class="absolute right-3 top-1/2 transform -translate-y-1/2 text-neutral-500 hover:text-primary">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+                    <a href="#" class="text-sm text-neutral-600 hover:text-primary">English</a>
+                </div>
+				
+
+                <!-- 移动端菜单按钮 -->
+                <button id="mobile-menu-button" class="md:hidden text-neutral-700 hover:text-primary">
+                    <i class="fa fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- 移动端菜单 -->
+    <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-neutral-200">
+        <div class="container mx-auto px-4 py-3 space-y-2">
+            <a href="index.html" class="block py-2 text-primary font-medium">首页</a>
+            
+            <!-- 移动端 - 学校概况下拉菜单 -->
+            <!-- 修改移动端 - 学校概况下拉菜单 -->
+            <div class="mobile-dropdown">
+                <button class="w-full flex justify-between items-center py-2 text-primary font-medium">
+                    学校概况 <i class="fa fa-angle-down"></i>
+                </button>
+                <div class="mobile-dropdown-content hidden pl-4 space-y-1 py-2">
+                    <a href="about.html#intro" class="block py-1 text-sm text-neutral-700">学校简介</a>
+                    <a href="about.html#history" class="block py-1 text-sm text-neutral-700">历史沿革</a>
+                    <a href="about.html#past-leaders" class="block py-1 text-sm text-neutral-700">历任领导</a>
+                    <a href="about.html#current-leaders" class="block py-1 text-sm text-neutral-700">现任领导</a>
+                    <a href="about.html#organization" class="block py-1 text-sm text-neutral-700">组织机构</a>
+                </div>
+            </div>
+            
+            <!-- 移动端 - 教育教学下拉菜单 -->
+            <div class="mobile-dropdown">
+                <button class="w-full flex justify-between items-center py-2 text-primary font-medium">
+                    教育教学 <i class="fa fa-angle-down"></i>
+                </button>
+                <div class="mobile-dropdown-content hidden pl-4 space-y-1 py-2">
+					<a href="education.html#overview" class="block py-1 text-sm text-neutral-700">本科生教育</a>
+                    <a href="education.html#undergraduate" class="block py-1 text-sm text-neutral-700">本科生教育</a>
+                    <a href="education.html#postgraduate" class="block py-1 text-sm text-neutral-700">研究生教育</a>
+                    <a href="education.html#international" class="block py-1 text-sm text-neutral-700">留学生教育</a>
+                    <a href="education.html#continuing" class="block py-1 text-sm text-neutral-700">继续教育</a>
+                    <a href="education.html#courses" class="block py-1 text-sm text-neutral-700">课程中心</a>
+                </div>
+            </div>
+            
+            <!-- 移动端 - 学科科研下拉菜单 -->
+            <div class="mobile-dropdown">
+                <button class="w-full flex justify-between items-center py-2 text-primary font-medium">
+                    学科科研 <i class="fa fa-angle-down"></i>
+                </button>
+                <div class="mobile-dropdown-content hidden pl-4 space-y-1 py-2">
+                    <a href="research.html" class="block py-1 text-sm text-neutral-700">学科建设</a>
+                    <a href="research.html" class="block py-1 text-sm text-neutral-700">科研机构</a>
+                    <a href="research.html" class="block py-1 text-sm text-neutral-700">科研项目</a>
+                    <a href="research.html" class="block py-1 text-sm text-neutral-700">科研成果</a>
+                    <a href="research.html" class="block py-1 text-sm text-neutral-700">学术期刊</a>
+                </div>
+            </div>
+            
+            <!-- 移动端 - 师资队伍下拉菜单 -->
+            <div class="mobile-dropdown">
+                <button class="w-full flex justify-between items-center py-2 text-primary font-medium">
+                    师资队伍 <i class="fa fa-angle-down"></i>
+                </button>
+                <div class="mobile-dropdown-content hidden pl-4 space-y-1 py-2">
+                    <a href="faculty.html" class="block py-1 text-sm text-neutral-700">师资概况</a>
+                    <a href="faculty.html" class="block py-1 text-sm text-neutral-700">两院院士</a>
+                    <a href="faculty.html" class="block py-1 text-sm text-neutral-700">杰出人才</a>
+                    <a href="faculty.html" class="block py-1 text-sm text-neutral-700">教师招聘</a>
+                    <a href="faculty.html" class="block py-1 text-sm text-neutral-700">教师服务</a>
+                </div>
+            </div>
+            
+			
+			
+            <!-- 移动端 - 学生服务下拉菜单 -->
+            <div class="mobile-dropdown">
+                <button class="w-full flex justify-between items-center py-2 text-primary font-medium">
+                    学生服务 <i class="fa fa-angle-down"></i>
+                </button>
+                <div class="mobile-dropdown-content hidden pl-4 space-y-1 py-2">
+                    <a href="campus-life.html#student-affairs" class="block py-1 text-sm text-neutral-700">学生事务</a>
+                    <a href="campus-life.html#awards" class="block py-1 text-sm text-neutral-700">奖助体系</a>
+                    <a href="campus-life.html#mental-health" class="block py-1 text-sm text-neutral-700">心理健康</a>
+                    <a href="campus-life.html#career-guidance" class="block py-1 text-sm text-neutral-700">就业指导</a>
+                    <a href="campus-life.html#campus-life" class="block py-1 text-sm text-neutral-700">校园生活</a>
+                </div>
+            </div>
+            
+            <!-- 移动端 - 招生就业下拉菜单 -->
+            <div class="mobile-dropdown">
+                <button class="w-full flex justify-between items-center py-2 text-primary font-medium">
+                    招生就业 <i class="fa fa-angle-down"></i>
+                </button>
+                <div class="mobile-dropdown-content hidden pl-4 space-y-1 py-2">
+                    <a href="admissions.html#undergraduate" class="block py-1 text-sm text-neutral-700">本科生招生</a>
+                    <a href="admissions.html#postgraduate" class="block py-1 text-sm text-neutral-700">研究生招生</a>
+                    <a href="admissions.html#international" class="block py-1 text-sm text-neutral-700">留学生招生</a>
+                    <a href="admissions.html#continuing" class="block py-1 text-sm text-neutral-700">继续教育招生</a>
+                    <a href="admissions.html#employment" class="block py-1 text-sm text-neutral-700">就业信息</a>
+                </div>
+            </div>
+            <p>热烈庆祝华方大学建校114周年 | <a href="celebration.html" class="underline hover:text-secondary transition-colors">校庆专题网站</a></p>
+            <!-- 移动端 - 搜索框和语言切换 -->
+            <div class="pt-2 border-t border-neutral-200">
+                <div class="relative mb-3">
+                    <input type="text" placeholder="搜索..." class="py-2 px-3 pr-8 rounded-full border border-neutral-300 focus:outline-none focus:ring-2 focus:ring-primary/50 text-sm w-full">
+                    <button class="absolute right-3 top-1/2 transform -translate-y-1/2 text-neutral-500 hover:text-primary">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </div>
+                <a href="#" class="block py-2 text-sm text-neutral-600 hover:text-primary">
+                    <i class="fa fa-globe mr-1"></i> English
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- 返回顶部按钮 -->
+    <button id="back-to-top" class="fixed bottom-8 right-8 bg-primary text-white rounded-full p-3 shadow-lg opacity-0 invisible transition-all duration-300 hover:bg-primary/90 focus:outline-none">
+        <i class="fa fa-arrow-up"></i>
+    </button>
+
+    <script>
+        // 移动端菜单功能
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            
+            if (mobileMenuButton && mobileMenu) {
+                mobileMenuButton.addEventListener('click', function() {
+                    mobileMenu.classList.toggle('hidden');
+                });
+            }
+            
+            // 移动端下拉菜单
+            const mobileDropdownButtons = document.querySelectorAll('.mobile-dropdown button');
+            mobileDropdownButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    content.classList.toggle('hidden');
+                    const icon = this.querySelector('i');
+                    if (content.classList.contains('hidden')) {
+                        icon.classList.remove('fa-angle-up');
+                        icon.classList.add('fa-angle-down');
+                    } else {
+                        icon.classList.remove('fa-angle-down');
+                        icon.classList.add('fa-angle-up');
+                    }
+                });
+            });
+            
+            // 返回顶部按钮
+            const backToTopButton = document.getElementById('back-to-top');
+            window.addEventListener('scroll', function() {
+                if (window.scrollY > 300) {
+                    backToTopButton.classList.remove('opacity-0', 'invisible');
+                    backToTopButton.classList.add('opacity-100', 'visible');
+                } else {
+                    backToTopButton.classList.add('opacity-0', 'invisible');
+                    backToTopButton.classList.remove('opacity-100', 'visible');
+                }
+            });
+            
+            backToTopButton.addEventListener('click', function() {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>

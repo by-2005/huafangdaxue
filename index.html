@@ -1,0 +1,1148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>华方大学</title>
+    <link rel="icon" type="img/png" href="img/147.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="script.js"></script>
+</head>
+<script>
+	
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    primary: '#1A3E6F', // 华方蓝
+                    neutral: {
+                        100: '#F5F7FA',
+                        200: '#E4E7ED',
+                        300: '#DCDFE6',
+                        400: '#C0C4CC',
+                        500: '#909399',
+                        600: '#606266',
+                        700: '#303133',
+                        800: '#1E1E1E',
+                    }
+                },
+                fontFamily: {
+                    sans: ['Noto Sans SC', 'sans-serif'],
+                },
+            }
+        }
+    }
+</script>
+<body class="font-sans text-neutral-700">
+    <!-- 顶部通知栏 -->
+    <div id="navbar"></div>
+
+   <!-- 轮播图 -->
+   <section class="relative h-[500px] md:h-[600px] overflow-hidden" >
+       <div class="carousel relative h-full" >
+           <div class="carousel-item absolute inset-0 opacity-100 transition-opacity duration-1000">
+               <img src="img/轮播图1.jpg" alt="华方大学校园风景" class="w-full h-full object-cover">
+               <div class="absolute inset-0 bg-gradient-to-r from-primary/70 to-transparent flex items-center">
+                   <div class="container mx-auto px-4 md:px-6">
+                       <div class="max-w-xl">
+                           <span class="inline-block px-3 py-1 bg-secondary text-white text-sm font-medium rounded mb-4">最新公告</span>
+                           <h2 class="text-[clamp(1.8rem,4vw,3rem)] font-bold text-white leading-tight mb-4">华方大学2025年本科招生章程发布</h2>
+                           <p class="text-white/90 text-lg mb-6">华方大学2025年本科招生章程已经正式发布，今年计划招收3800名本科生，涵盖多个学科门类。</p>
+                           <a href="#" class="inline-block px-6 py-3 bg-white text-primary font-medium rounded-md hover:bg-neutral-100 transition-colors shadow-lg">查看详情</a>
+                       </div>
+                   </div>
+               </div>
+           </div>
+           <div class="carousel-item absolute inset-0 opacity-0 transition-opacity duration-1000">
+               <img src="img/轮播图2.jpg" alt="华方大学学术会议" class="w-full h-full object-cover">
+               <div class="absolute inset-0 bg-gradient-to-r from-primary/70 to-transparent flex items-center">
+                   <div class="container mx-auto px-4 md:px-6">
+                       <div class="max-w-xl">
+                           <span class="inline-block px-3 py-1 bg-secondary text-white text-sm font-medium rounded mb-4">学术动态</span>
+                           <h2 class="text-[clamp(1.8rem,4vw,3rem)] font-bold text-white leading-tight mb-4">2025全球科技创新论坛在华方园举行</h2>
+                           <p class="text-white/90 text-lg mb-6">来自全球30多个国家和地区的500余位科技领袖、企业家和学者齐聚华方，共议科技创新发展趋势。</p>
+                           <a href="#" class="inline-block px-6 py-3 bg-white text-primary font-medium rounded-md hover:bg-neutral-100 transition-colors shadow-lg">查看详情</a>
+                       </div>
+                   </div>
+               </div>
+           </div>
+           <div class="carousel-item absolute inset-0 opacity-0 transition-opacity duration-1000">
+               <img src="img/轮播图3.jpg" alt="华方大学校庆活动" class="w-full h-full object-cover">
+               <div class="absolute inset-0 bg-gradient-to-r from-primary/70 to-transparent flex items-center">
+                   <div class="container mx-auto px-4 md:px-6">
+                       <div class="max-w-xl">
+                           <span class="inline-block px-3 py-1 bg-secondary text-white text-sm font-medium rounded mb-4">校庆活动</span>
+                           <h2 class="text-[clamp(1.8rem,4vw,3rem)] font-bold text-white leading-tight mb-4">华方大学建校114周年校庆系列活动精彩呈现</h2>
+                           <p class="text-white/90 text-lg mb-6">华方大学校庆期间将举办多场学术论坛、校友聚会、文艺演出等活动，诚邀广大校友返校共庆。</p>
+                           <a href="#" class="inline-block px-6 py-3 bg-white text-primary font-medium rounded-md hover:bg-neutral-100 transition-colors shadow-lg">查看详情</a>
+                       </div>
+                   </div>
+               </div>
+           </div>
+       </div>
+       <div class="absolute bottom-6 left-0 right-0 flex justify-center space-x-2">
+           <button class="carousel-dot w-3 h-3 rounded-full bg-white opacity-100"></button>
+           <button class="carousel-dot w-3 h-3 rounded-full bg-white opacity-50"></button>
+           <button class="carousel-dot w-3 h-3 rounded-full bg-white opacity-50"></button>
+       </div>
+       <button class="carousel-control absolute left-4 top-1/2 transform -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm text-white flex items-center justify-center hover:bg-white/30 transition-colors">
+           <i class="fa fa-angle-left text-xl"></i>
+       </button>
+       <button class="carousel-control absolute right-4 top-1/2 transform -translate-y-1/2 w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm text-white flex items-center justify-center hover:bg-white/30 transition-colors">
+           <i class="fa fa-angle-right text-xl"></i>
+       </button>
+   </section>
+
+    <!-- 学校概况 -->
+    <section class="py-16 bg-neutral-100">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-primary mb-4">学校概况</h2>
+                <p class="text-neutral-600 max-w-3xl mx-auto">华方大学是中国著名高等学府，坐落于北京西北郊风景秀丽的华方园，是中国高层次人才培养和科学技术研究的重要基地之一。</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white rounded-lg shadow-md p-6 transform hover:-translate-y-2 transition-all duration-300">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-graduation-cap text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-neutral-800 mb-3">教育教学</h3>
+                    <p class="text-neutral-600">华方大学始终坚持"中西融会、古今贯通、文理渗透"的办学风格，形成了"又红又专、全面发展"的育人特色。</p>
+                    <a href="education.html#overview" class="inline-block mt-4 text-primary font-medium hover:text-secondary transition-colors">了解更多 <i class="fa fa-angle-right ml-1"></i></a>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md p-6 transform hover:-translate-y-2 transition-all duration-300">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-flask text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-neutral-800 mb-3">学术研究</h3>
+                    <p class="text-neutral-600">华方大学科研工作紧密结合国家战略需求，取得了一批具有国际先进水平的创新性成果。</p>
+                    <a href="research.html#achievements" class="inline-block mt-4 text-primary font-medium hover:text-secondary transition-colors">了解更多 <i class="fa fa-angle-right ml-1"></i></a>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md p-6 transform hover:-translate-y-2 transition-all duration-300">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-users text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-neutral-800 mb-3">师资力量</h3>
+                    <p class="text-neutral-600">华方大学拥有一支高水平的师资队伍，其中包括众多国内外知名学者和学术带头人。</p>
+                    <a href="faculty.html#overview" class="inline-block mt-4 text-primary font-medium hover:text-secondary transition-colors">了解更多 <i class="fa fa-angle-right ml-1"></i></a>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md p-6 transform hover:-translate-y-2 transition-all duration-300">
+                    <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                        <i class="fa fa-globe text-primary text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-neutral-800 mb-3">招生就业</h3>
+                    <p class="text-neutral-600">华方大学积极开展国际交流与合作，与全球200多所大学建立了合作关系，培养具有国际视野的人才。</p>
+                    <a href="admissions.html#employment" class="inline-block mt-4 text-primary font-medium hover:text-secondary transition-colors">了解更多 <i class="fa fa-angle-right ml-1"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 新闻中心 -->
+    <section class="py-16">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="flex flex-col md:flex-row justify-between items-start md:items-center mb-12">
+                <div>
+                    <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-primary mb-4">新闻中心</h2>
+                    <p class="text-neutral-600 max-w-2xl">了解华方大学最新动态、学术成果和校园活动</p>
+                </div>
+                <div class="flex mt-4 md:mt-0">
+                    <button class="news-tab px-4 py-2 text-sm font-medium text-white bg-primary rounded-l-md">最新</button>
+                    <button class="news-tab px-4 py-2 text-sm font-medium text-neutral-600 bg-neutral-100 hover:bg-neutral-200 transition-colors">学术</button>
+                    <button class="news-tab px-4 py-2 text-sm font-medium text-neutral-600 bg-neutral-100 hover:bg-neutral-200 transition-colors rounded-r-md">校园</button>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- 新闻卡片1 -->
+                <article class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="img/会谈.jpg" alt="华方大学校长会见外宾" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 left-4 bg-secondary text-white text-xs font-medium px-2 py-1 rounded">
+                            重要新闻
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-neutral-500 text-sm mb-3">
+                            <i class="fa fa-calendar-o mr-2"></i>
+                            <span>2025年6月15日</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-neutral-800 mb-3 hover:text-primary transition-colors">华方大学校长会见美国麻省理工学院校长</h3>
+                        <p class="text-neutral-600 mb-4 line-clamp-3">6月15日，华方大学校长方超会见了来访的美国麻省理工学院校长L. Rafael Reif一行，双方就深化两校在科研合作、学生交流等方面的合作进行了深入探讨。</p>
+                        <a href="#" class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors">
+                            阅读全文 <i class="fa fa-long-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </article>
+                
+                <!-- 新闻卡片2 -->
+                <article class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="img/技术.jpg" alt="华方大学科研成果" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 left-4 bg-primary text-white text-xs font-medium px-2 py-1 rounded">
+                            学术动态
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-neutral-500 text-sm mb-3">
+                            <i class="fa fa-calendar-o mr-2"></i>
+                            <span>2025年6月12日</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-neutral-800 mb-3 hover:text-primary transition-colors">华方团队在量子计算领域取得重大突破</h3>
+                        <p class="text-neutral-600 mb-4 line-clamp-3">华方大学量子信息中心段路明研究组在量子计算领域取得重要进展，成功实现了50个量子比特的量子纠缠，为量子计算的实用化奠定了坚实基础。</p>
+                        <a href="#" class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors">
+                            阅读全文 <i class="fa fa-long-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </article>
+                
+                <!-- 新闻卡片3 -->
+                <article class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div class="relative h-48 overflow-hidden">
+                        <img src="img/校庆.jpg" alt="华方大学校园活动" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
+                        <div class="absolute top-4 left-4 bg-green-600 text-white text-xs font-medium px-2 py-1 rounded">
+                            校园生活
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center text-neutral-500 text-sm mb-3">
+                            <i class="fa fa-calendar-o mr-2"></i>
+                            <span>2025年6月10日</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-neutral-800 mb-3 hover:text-primary transition-colors">华方大学第43届校园文化节盛大开幕</h3>
+                        <p class="text-neutral-600 mb-4 line-clamp-3">6月10日，华方大学第43届校园文化节在大礼堂前广场盛大开幕。本届文化节以"传承与创新"为主题，将举办文艺演出、展览展示、学术讲座等一系列活动。</p>
+                        <a href="#" class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors">
+                            阅读全文 <i class="fa fa-long-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </article>
+            </div>
+            
+            <div class="text-center mt-10">
+                <a href="#" class="inline-block px-6 py-3 border border-primary text-primary font-medium rounded-md hover:bg-primary hover:text-white transition-colors">
+                    查看更多新闻 <i class="fa fa-angle-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 学术研究 -->
+    <section class="py-16 bg-primary/5">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-primary mb-4">学术研究</h2>
+                <p class="text-neutral-600 max-w-3xl mx-auto">华方大学科研工作紧密结合国家战略需求，在多个学科领域取得了一批具有国际先进水平的创新性成果</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div class="p-6">
+                        <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                            <i class="fa fa-microchip text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-neutral-800 mb-3">人工智能与计算机科学</h3>
+                        <p class="text-neutral-600 mb-4">华方大学在人工智能领域拥有多个国家级研究中心，致力于推动人工智能基础理论研究和关键技术突破。</p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span class="text-neutral-700">计算机视觉与模式识别</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span class="text-neutral-700">自然语言处理</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span class="text-neutral-700">机器学习与深度学习</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors">
+                            了解更多 <i class="fa fa-angle-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div class="p-6">
+                        <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                            <i class="fa fa-leaf text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-neutral-800 mb-3">能源与环境科学</h3>
+                        <p class="text-neutral-600 mb-4">华方大学在能源与环境领域开展前沿研究，为解决全球能源与环境问题提供创新解决方案。</p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span class="text-neutral-700">可再生能源技术</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span class="text-neutral-700">低碳与可持续发展</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span class="text-neutral-700">环境污染控制与修复</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors">
+                            了解更多 <i class="fa fa-angle-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
+                    <div class="p-6">
+                        <div class="w-14 h-14 bg-primary/10 rounded-full flex items-center justify-center mb-6">
+                            <i class="fa fa-heartbeat text-primary text-2xl"></i>
+                        </div>
+                        <h3 class="text-xl font-bold text-neutral-800 mb-3">生命科学与医学</h3>
+                        <p class="text-neutral-600 mb-4">华方大学在生命科学与医学领域开展前沿研究，致力于攻克重大疾病，推动精准医疗发展。</p>
+                        <ul class="space-y-2 mb-6">
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span class="text-neutral-700">基因组学与蛋白质组学</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span class="text-neutral-700">干细胞与再生医学</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fa fa-check-circle text-green-500 mt-1 mr-2"></i>
+                                <span class="text-neutral-700">生物信息学与计算生物学</span>
+                            </li>
+                        </ul>
+                        <a href="#" class="inline-flex items-center text-primary font-medium hover:text-secondary transition-colors">
+                            了解更多 <i class="fa fa-angle-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center">
+                <a href="research.html#projects" class="inline-block px-6 py-3 bg-primary text-white font-medium rounded-md hover:bg-primary/90 transition-colors shadow-md">
+                    查看所有研究领域 <i class="fa fa-angle-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 招生信息 -->
+    <section class="py-16 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-primary/5 -skew-x-12 transform origin-top-right z-0"></div>
+        <div class="container mx-auto px-4 md:px-6 relative z-10">
+            <div class="flex flex-col md:flex-row items-start md:items-center justify-between mb-12">
+                <div>
+                    <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-primary mb-4">招生信息</h2>
+                    <p class="text-neutral-600 max-w-2xl">华方大学致力于培养具有全球视野、创新能力和社会责任感的未来领袖</p>
+                </div>
+                <div class="mt-4 md:mt-0">
+                    <div class="flex space-x-2">
+                        <a href="#" class="px-4 py-2 bg-primary text-white rounded-md font-medium hover:bg-primary/90 transition-colors">本科生招生</a>
+                        <a href="#" class="px-4 py-2 bg-white text-primary border border-primary rounded-md font-medium hover:bg-primary/5 transition-colors">研究生招生</a>
+                        <a href="#" class="px-4 py-2 bg-white text-primary border border-primary rounded-md font-medium hover:bg-primary/5 transition-colors">国际学生招生</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <div class="h-64 overflow-hidden">
+                        <img src="img/招生.jpg" alt="华方大学校园" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-neutral-800 mb-3">2025年本科生招生简章</h3>
+                        <p class="text-neutral-600 mb-4">华方大学2025年计划招收3800名本科生，招生专业涵盖理、工、文、法、经、管、艺等多个学科门类。</p>
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <div class="bg-neutral-100 rounded p-3">
+                                <p class="text-sm text-neutral-500 mb-1">报名时间</p>
+                                <p class="font-medium text-neutral-800">2025年9月1日-10月15日</p>
+                            </div>
+                            <div class="bg-neutral-100 rounded p-3">
+                                <p class="text-sm text-neutral-500 mb-1">考试时间</p>
+                                <p class="font-medium text-neutral-800">2025年12月10日-12月12日</p>
+                            </div>
+                            <div class="bg-neutral-100 rounded p-3">
+                                <p class="text-sm text-neutral-500 mb-1">录取结果</p>
+                                <p class="font-medium text-neutral-800">2026年3月15日公布</p>
+                            </div>
+                            <div class="bg-neutral-100 rounded p-3">
+                                <p class="text-sm text-neutral-500 mb-1">咨询电话</p>
+                                <p class="font-medium text-neutral-800">010-62782051</p>
+                            </div>
+                        </div>
+                        <a href="admissions.html#undergraduate" class="inline-block px-5 py-2 bg-primary text-white rounded-md font-medium hover:bg-primary/90 transition-colors">
+                            查看详情 <i class="fa fa-angle-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <div class="h-64 overflow-hidden">
+                        <img src="img/johns-hopkins-university-4236470_1280.jpg" alt="华方大学校园" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-neutral-800 mb-3">2025年研究生招生简章</h3>
+                        <p class="text-neutral-600 mb-4">华方大学2025年计划招收硕士研究生约5000名，博士研究生约3000名，欢迎有志于学术研究的优秀学子报考。</p>
+                        <div class="grid grid-cols-2 gap-4 mb-6">
+                            <div class="bg-neutral-100 rounded p-3">
+                                <p class="text-sm text-neutral-500 mb-1">报名时间</p>
+                                <p class="font-medium text-neutral-800">2025年10月1日-11月15日</p>
+                            </div>
+                            <div class="bg-neutral-100 rounded p-3">
+                                <p class="text-sm text-neutral-500 mb-1">考试时间</p>
+                                <p class="font-medium text-neutral-800">2026年1月10日-1月12日</p>
+                            </div>
+                            <div class="bg-neutral-100 rounded p-3">
+                                <p class="text-sm text-neutral-500 mb-1">录取结果</p>
+                                <p class="font-medium text-neutral-800">2026年4月15日公布</p>
+                            </div>
+                            <div class="bg-neutral-100 rounded p-3">
+                                <p class="text-sm text-neutral-500 mb-1">咨询电话</p>
+                                <p class="font-medium text-neutral-800">010-62782192</p>
+                            </div>
+                        </div>
+                        <a href="admissions.html#postgraduate" class="inline-block px-5 py-2 bg-primary text-white rounded-md font-medium hover:bg-primary/90 transition-colors">
+                            查看详情 <i class="fa fa-angle-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+			
+			<div class="grid grid-cols-1 md:grid-cols-2 gap-8 " style="margin-top: 50px;">
+			    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+			        <div class="h-64 overflow-hidden">
+			            <img src="img/招生.jpg" alt="华方大学校园" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
+			        </div>
+			        <div class="p-6">
+			            <h3 class="text-xl font-bold text-neutral-800 mb-3">2025年留学生招生简章</h3>
+			            <p class="text-neutral-600 mb-4">华方大学2025年计划招收380名留学生，招生专业涵盖理、工、文、法、经、管、艺等多个学科门类。</p>
+			            <div class="grid grid-cols-2 gap-4 mb-6">
+			                <div class="bg-neutral-100 rounded p-3">
+			                    <p class="text-sm text-neutral-500 mb-1">报名时间</p>
+			                    <p class="font-medium text-neutral-800">2025年9月1日-10月15日</p>
+			                </div>
+			                <div class="bg-neutral-100 rounded p-3">
+			                    <p class="text-sm text-neutral-500 mb-1">考试时间</p>
+			                    <p class="font-medium text-neutral-800">2025年12月10日-12月12日</p>
+			                </div>
+			                <div class="bg-neutral-100 rounded p-3">
+			                    <p class="text-sm text-neutral-500 mb-1">录取结果</p>
+			                    <p class="font-medium text-neutral-800">2026年3月15日公布</p>
+			                </div>
+			                <div class="bg-neutral-100 rounded p-3">
+			                    <p class="text-sm text-neutral-500 mb-1">咨询电话</p>
+			                    <p class="font-medium text-neutral-800">010-62782051</p>
+			                </div>
+			            </div>
+			            <a href="admissions.html#international" class="inline-block px-5 py-2 bg-primary text-white rounded-md font-medium hover:bg-primary/90 transition-colors">
+			                查看详情 <i class="fa fa-angle-right ml-2"></i>
+			            </a>
+			        </div>
+			    </div>
+			    
+			    <div class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+			        <div class="h-64 overflow-hidden">
+			            <img src="img/johns-hopkins-university-4236470_1280.jpg" alt="华方大学校园" class="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500">
+			        </div>
+			        <div class="p-6">
+			            <h3 class="text-xl font-bold text-neutral-800 mb-3">2025年继续教育学生招生简章</h3>
+			            <p class="text-neutral-600 mb-4">华方大学2025年计划招收继续教育学生约5000名，欢迎有志于学术研究的优秀学子报考。</p>
+			            <div class="grid grid-cols-2 gap-4 mb-6">
+			                <div class="bg-neutral-100 rounded p-3">
+			                    <p class="text-sm text-neutral-500 mb-1">报名时间</p>
+			                    <p class="font-medium text-neutral-800">2025年10月1日-11月15日</p>
+			                </div>
+			                <div class="bg-neutral-100 rounded p-3">
+			                    <p class="text-sm text-neutral-500 mb-1">考试时间</p>
+			                    <p class="font-medium text-neutral-800">2026年1月10日-1月12日</p>
+			                </div>
+			                <div class="bg-neutral-100 rounded p-3">
+			                    <p class="text-sm text-neutral-500 mb-1">录取结果</p>
+			                    <p class="font-medium text-neutral-800">2026年4月15日公布</p>
+			                </div>
+			                <div class="bg-neutral-100 rounded p-3">
+			                    <p class="text-sm text-neutral-500 mb-1">咨询电话</p>
+			                    <p class="font-medium text-neutral-800">010-62782192</p>
+			                </div>
+			            </div>
+			            <a href="admissions.html#continuing" class="inline-block px-5 py-2 bg-primary text-white rounded-md font-medium hover:bg-primary/90 transition-colors">
+			                查看详情 <i class="fa fa-angle-right ml-2"></i>
+			            </a>
+			        </div>
+			    </div>
+			</div>
+        </div>
+    </section>
+
+    <!-- 校园风光 -->
+    <section class="py-16 bg-neutral-100">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-primary mb-4">校园风光</h2>
+                <p class="text-neutral-600 max-w-3xl mx-auto">华方园有着优美的自然环境和悠久的历史文化底蕴，被誉为"中国最美的大学校园"之一</p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="relative overflow-hidden rounded-lg group cursor-pointer">
+                    <img src="img/华方圆.jpg" alt="华方大学校园风景" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                        <div class="p-4">
+                            <h3 class="text-white font-bold text-lg">华方园</h3>
+                            <p class="text-white/80 text-sm">华方大学的主校区，始建于1911年</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-lg group cursor-pointer">
+                    <img src="img/礼堂.jpg" alt="华方大学校园风景" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                        <div class="p-4">
+                            <h3 class="text-white font-bold text-lg">大礼堂</h3>
+                            <p class="text-white/80 text-sm">华方大学的标志性建筑之一，建于1920年代</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-lg group cursor-pointer">
+                    <img src="img/湖.jpg" alt="华方大学校园风景" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                        <div class="p-4">
+                            <h3 class="text-white font-bold text-lg">水木华方</h3>
+                            <p class="text-white/80 text-sm">华方园的核心景观，湖水清澈，绿树成荫</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="relative overflow-hidden rounded-lg group cursor-pointer">
+                    <img src="img/图书馆.jpg" alt="华方大学校园风景" class="w-full h-80 object-cover transition-transform duration-500 group-hover:scale-110">
+                    <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end">
+                        <div class="p-4">
+                            <h3 class="text-white font-bold text-lg">图书馆</h3>
+                            <p class="text-white/80 text-sm">华方大学图书馆是中国最大的大学图书馆之一</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-10">
+                <a href="campus-life.html#campus-life" class="inline-block px-6 py-3 border border-primary text-primary font-medium rounded-md hover:bg-primary hover:text-white transition-colors">
+                    查看更多校园风光 <i class="fa fa-angle-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 校友动态 -->
+    <section class="py-16">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="text-center mb-12">
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-primary mb-4">校友动态</h2>
+                <p class="text-neutral-600 max-w-3xl mx-auto">华方校友遍布全球，在各个领域取得了杰出成就，为国家和社会做出了重要贡献</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
+                    <div class="flex items-center mb-6">
+                        <img src="img/gg.jpg" alt="校友照片" class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h3 class="text-lg font-bold text-neutral-800">陈鸣（果果）</h3>
+                            <p class="text-neutral-600 text-sm">2023的果果</p>
+                            <p class="text-primary text-sm font-medium">科技创新CEO</p>
+                        </div>
+                    </div>
+                    <p class="text-neutral-700 mb-4">"华方大学的学习经历为我打下了坚实的基础，培养了我解决问题的能力和创新思维。毕业后，我创办了自己的科技公司，致力于人工智能领域的研发与应用。"</p>
+                    <a href="#" class="inline-block text-primary font-medium hover:text-secondary transition-colors">
+                        查看详情 <i class="fa fa-angle-right ml-1"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
+                    <div class="flex items-center mb-6">
+                        <img src="img/yang.jpg" alt="校友照片" class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h3 class="text-lg font-bold text-neutral-800">杨瑞</h3>
+                            <p class="text-neutral-600 text-sm">2023届校友</p>
+                            <p class="text-primary text-sm font-medium">知名范</p>
+                        </div>
+                    </div>
+                    <p class="text-neutral-700 mb-4">"华方园的人文氛围和学术环境对我的成长影响深远。作为一名建筑师，我希望通过自己的作品，将传统文化与现代设计理念相结合，创造出更具人文关怀的建筑空间。"</p>
+                    <a href="#" class="inline-block text-primary font-medium hover:text-secondary transition-colors">
+                        查看详情 <i class="fa fa-angle-right ml-1"></i>
+                    </a>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300">
+                    <div class="flex items-center mb-6">
+                        <img src="img/zhang.jpg" alt="校友照片" class="w-16 h-16 rounded-full object-cover mr-4">
+                        <div>
+                            <h3 class="text-lg font-bold text-neutral-800">张立春</h3>
+                            <p class="text-neutral-600 text-sm">2023届的天军</p>
+                            <p class="text-primary text-sm font-medium">知名医学专家</p>
+                        </div>
+                    </div>
+                    <p class="text-neutral-700 mb-4">"在华方医学院的学习让我深刻体会到医学的责任与使命。作为一名医生，我始终坚持以患者为中心，不断探索医学前沿，为攻克疑难杂症贡献自己的力量。"</p>
+                    <a href="#" class="inline-block text-primary font-medium hover:text-secondary transition-colors">
+                        查看详情 <i class="fa fa-angle-right ml-1"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="text-center mt-10">
+                <a href="#" class="inline-block px-6 py-3 bg-primary text-white font-medium rounded-md hover:bg-primary/90 transition-colors shadow-md">
+                    查看更多校友故事 <i class="fa fa-angle-right ml-2"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+	
+	 <!-- 留言板 -->
+	    <section class="py-16 bg-neutral-100">
+	        <div class="container mx-auto px-4 md:px-6">
+	            <div class="text-center mb-12">
+	                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-primary mb-4">留言板</h2>
+	                <p class="text-neutral-600 max-w-3xl mx-auto">在这里您可以查看其他访客的留言，也可以留下您的意见和建议</p>
+	            </div>
+	            
+	            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+	                <!-- 留言列表 -->
+	                <div>
+	                    <div class="flex justify-between items-center mb-6">
+	                        <h3 class="text-xl font-bold text-neutral-800">最新留言</h3>
+	                        <button onclick="refreshMessages()" class="px-4 py-2 bg-primary text-white rounded-md hover:bg-primary/90 transition-colors">
+	                            <i class="fa fa-refresh mr-2"></i>刷新留言
+	                        </button>
+	                    </div>
+	                    
+	                    <div id="messageList" class="space-y-6 max-h-[600px] overflow-y-auto pr-4">
+	                        <!-- 留言将通过JavaScript动态加载 -->
+	                        <div class="text-center py-10">
+	                            <i class="fa fa-spinner fa-spin text-2xl text-primary"></i>
+	                            <p class="mt-2 text-neutral-600">正在加载留言...</p>
+	                        </div>
+	                    </div>
+	                </div>
+	                
+	                <!-- 提交留言表单 -->
+	                <div>
+	                    <div class="bg-white rounded-xl shadow-lg p-8">
+	                        <h3 class="text-xl font-bold text-neutral-800 mb-6">发表留言</h3>
+	                        <form id="messageForm" onsubmit="submitMessage(event)">
+	                            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-6">
+	                                <div>
+	                                    <label for="name" class="block text-sm font-medium text-neutral-700 mb-2">姓名</label>
+	                                    <input type="text" id="name" name="name" required 
+	                                           class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors" 
+	                                           placeholder="请输入您的姓名">
+	                                </div>
+	                                <div>
+	                                    <label for="email" class="block text-sm font-medium text-neutral-700 mb-2">邮箱</label>
+	                                    <input type="email" id="email" name="email" required 
+	                                           class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors" 
+	                                           placeholder="请输入您的邮箱"
+	                                           oninput="validateEmailLive(this)">
+	                                    <p id="emailError" class="text-red-500 text-sm mt-1 hidden">
+	                                        <i class="fa fa-exclamation-circle mr-1"></i>请输入有效的邮箱地址
+	                                    </p>
+	                                </div>
+	                            </div>
+	                            
+	                            <div class="mb-6">
+	                                <label for="title" class="block text-sm font-medium text-neutral-700 mb-2">留言标题</label>
+	                                <input type="text" id="title" name="title" required 
+	                                       class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors" 
+	                                       placeholder="请输入留言标题">
+	                            </div>
+	                            
+	                            <div class="mb-6">
+	                                <label for="content" class="block text-sm font-medium text-neutral-700 mb-2">留言内容</label>
+	                                <textarea id="content" name="content" rows="5" required 
+	                                          class="w-full px-4 py-3 border border-neutral-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-primary transition-colors" 
+	                                          placeholder="请输入您的留言内容"></textarea>
+	                            </div>
+	                            
+	                            <button type="submit" class="w-full py-3 bg-primary text-white font-medium rounded-md hover:bg-primary/90 transition-colors shadow-md">
+	                                提交留言 <i class="fa fa-paper-plane ml-2"></i>
+	                            </button>
+	                        </form>
+	                    </div>
+	                </div>
+	            </div>
+	        </div>
+	    </section>
+						
+						
+				 <div id="successModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300">
+				        <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4 shadow-xl transform transition-all duration-300 scale-95">
+				            <div class="text-center">
+				                <div id="modalIcon" class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+				                    <i id="modalIconSymbol" class="fa fa-check text-green-500 text-2xl"></i>
+				                </div>
+				                <h3 class="text-xl font-bold text-neutral-800 mb-2" id="modalTitle">操作成功！</h3>
+				                <p class="text-neutral-600 mb-6" id="modalMessage">您的留言已成功提交，感谢您的参与。</p>
+				                <button onclick="hideSuccessModal()" class="px-6 py-2 bg-primary text-white rounded-md hover:bg-primary/90 transition-colors">确定</button>
+				            </div>
+				        </div>
+				    </div>
+				
+				    <!-- 删除确认弹窗 -->
+				    <div id="deleteConfirmModal" class="fixed inset-0 z-50 flex items-center justify-center bg-black/50 opacity-0 pointer-events-none transition-opacity duration-300">
+				        <div class="bg-white rounded-lg p-8 max-w-md w-full mx-4 shadow-xl transform transition-all duration-300 scale-95">
+				            <div class="text-center">
+				                <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+				                    <i class="fa fa-exclamation-triangle text-red-500 text-2xl"></i>
+				                </div>
+				                <h3 class="text-xl font-bold text-neutral-800 mb-2">确认删除</h3>
+				                <p class="text-neutral-600 mb-6">您确定要删除这条留言吗？此操作不可撤销。</p>
+				                <div class="flex justify-center space-x-4">
+				                    <button onclick="confirmDelete()" class="px-6 py-2 bg-red-500 text-white rounded-md hover:bg-red-600 transition-colors">确认删除</button>
+				                    <button onclick="cancelDelete()" class="px-6 py-2 bg-neutral-200 text-neutral-800 rounded-md hover:bg-neutral-300 transition-colors">取消</button>
+				                </div>
+				            </div>
+				        </div>
+				    </div>
+
+							
+   <section class="py-16">
+        <div class="container mx-auto px-4 md:px-6">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-neutral-800 mb-6">联系我们</h2>
+                    <p class="text-neutral-600 mb-8">如果您有任何问题或建议，欢迎随时联系我们，我们将竭诚为您服务。</p>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 shrink-0">
+                                <i class="fa fa-map-marker text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-neutral-800 mb-1">地址</h3>
+                                <p class="text-neutral-600">人才市人才区华方路1号 华方大学</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 shrink-0">
+                                <i class="fa fa-phone text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-neutral-800 mb-1">电话</h3>
+                                <p class="text-neutral-600">+86 (10) 1234-5678</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 shrink-0">
+                                <i class="fa fa-envelope text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-neutral-800 mb-1">邮箱</h3>
+                                <p class="text-neutral-600">huafangdaxue@outlook.com</p>
+                            </div>
+                        </div>
+                        
+                        <div class="flex items-start">
+                            <div class="w-12 h-12 bg-primary/10 rounded-full flex items-center justify-center mr-4 shrink-0">
+                                <i class="fa fa-clock-o text-primary"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-bold text-neutral-800 mb-1">工作时间</h3>
+                                <p class="text-neutral-600">周一至周五: 8:00 - 18:00</p>
+                                <p class="text-neutral-600">周六至周日: 9:00 - 16:00</p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="mt-10">
+                        <h3 class="text-lg font-bold text-neutral-800 mb-4">关注我们</h3>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 bg-primary/10 hover:bg-primary/20 rounded-full flex items-center justify-center text-primary transition-colors">
+                                <i class="fa fa-weixin"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-primary/10 hover:bg-primary/20 rounded-full flex items-center justify-center text-primary transition-colors">
+                                <i class="fa fa-weibo"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-primary/10 hover:bg-primary/20 rounded-full flex items-center justify-center text-primary transition-colors">
+                                <i class="fa fa-youtube-play"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 bg-primary/10 hover:bg-primary/20 rounded-full flex items-center justify-center text-primary transition-colors">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                     
+					</div>
+    </section>
+    <!-- 页脚 -->
+    <div id="footer"></div>
+
+    
+		<script>
+		    
+		    const GITHUB_USERNAME = 'by-2005'; // 替换为您的GitHub用户名
+		    const GITHUB_REPO = 'university-messages'; // 替换为您的仓库名
+		    const GITHUB_TOKEN = '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'; // 替换为您的GitHub个人访问令牌
+		    const MESSAGES_FILE = 'messages.json';
+		    
+		    let messageToDelete = null;
+		    
+		    
+		    document.addEventListener('DOMContentLoaded', async function() {
+		        await refreshMessages();
+		    });
+		    
+		   
+		    async function loadMessages() {
+		        const messageList = document.getElementById('messageList');
+		        
+		        // 显示加载状态
+		        messageList.innerHTML = `
+		            <div class="text-center py-10">
+		                <i class="fa fa-spinner fa-spin text-2xl text-primary"></i>
+		                <p class="mt-2 text-neutral-600">正在加载留言...</p>
+		            </div>
+		        `;
+		        
+		        try {
+		            const response = await fetch(
+		                `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${MESSAGES_FILE}`,
+		                {
+		                    headers: {
+		                        'Authorization': `token ${GITHUB_TOKEN}`,
+		                        'Accept': 'application/vnd.github.v3+json'
+		                    }
+		                }
+		            );
+		            
+		            if (response.status === 404) {
+		                // 文件不存在，创建空数组
+		                return [];
+		            }
+		            
+		            if (!response.ok) {
+		                throw new Error('获取留言失败');
+		            }
+		            
+		            const data = await response.json();
+		            const content = atob(data.content); // 解码Base64内容
+		            return JSON.parse(content);
+		        } catch (error) {
+		            console.error('加载留言出错:', error);
+		            showFeedback('错误', '加载留言失败，请稍后重试', 'error');
+		            return [];
+		        }
+		    }
+		    
+		    // 保存留言
+		    async function saveMessages(messages) {
+		        try {
+		            // 首先获取文件当前SHA（用于更新）
+		            const getResponse = await fetch(
+		                `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${MESSAGES_FILE}`,
+		                {
+		                    headers: {
+		                        'Authorization': `token ${GITHUB_TOKEN}`,
+		                        'Accept': 'application/vnd.github.v3+json'
+		                    }
+		                }
+		            );
+		            
+		            let sha = null;
+		            if (getResponse.ok) {
+		                const data = await getResponse.json();
+		                sha = data.sha;
+		            }
+		            
+		            // 更新文件
+		            const content = btoa(JSON.stringify(messages, null, 2)); // 编码为Base64
+		            const response = await fetch(
+		                `https://api.github.com/repos/${GITHUB_USERNAME}/${GITHUB_REPO}/contents/${MESSAGES_FILE}`,
+		                {
+		                    method: 'PUT',
+		                    headers: {
+		                        'Authorization': `token ${GITHUB_TOKEN}`,
+		                        'Accept': 'application/vnd.github.v3+json',
+		                        'Content-Type': 'application/json'
+		                    },
+		                    body: JSON.stringify({
+		                        message: '更新留言',
+		                        content: content,
+		                        sha: sha || undefined
+		                    })
+		                }
+		            );
+		            
+		            if (!response.ok) {
+		                throw new Error('保存留言失败');
+		            }
+		            
+		            return true;
+		        } catch (error) {
+		            console.error('保存留言出错:', error);
+		            showFeedback('错误', '保存留言失败，请稍后重试', 'error');
+		            return false;
+		        }
+		    }
+		    
+		    // 提交留言
+		    async function submitMessage(event) {
+		        event.preventDefault();
+		        
+		        const form = event.target;
+		        const formData = new FormData(form);
+		        const email = formData.get('email').trim();
+		        
+		        // 验证邮箱
+		        if (!validateEmail(email)) {
+		            showFeedback('输入错误', '请输入有效的邮箱地址', 'error');
+		            document.getElementById('email').focus();
+		            return;
+		        }
+		        
+		        // 获取当前留言列表
+		        const currentMessages = await loadMessages();
+		        
+		        const newMessage = {
+		            id: currentMessages.length > 0 ? Math.max(...currentMessages.map(m => m.id)) + 1 : 1,
+		            name: formData.get('name'),
+		            email: email,
+		            title: formData.get('title'),
+		            content: formData.get('content'),
+		            date: new Date().toISOString()
+		        };
+		        
+		        const updatedMessages = [newMessage, ...currentMessages];
+		        
+		        // 保存到GitHub
+		        const success = await saveMessages(updatedMessages);
+		        
+		        if (success) {
+		            // 清空表单
+		            form.reset();
+		            
+		            // 刷新留言列表
+		            await refreshMessages();
+		            
+		            // 显示成功提示
+		            showFeedback('留言提交成功！', '您的留言已成功提交，感谢您的参与。', 'success');
+		        }
+		    }
+		    
+		    // 刷新留言
+		    async function refreshMessages() {
+		        const messages = await loadMessages();
+		        renderMessages(messages);
+		    }
+		    
+		    // 渲染留言列表
+		    function renderMessages(messages) {
+		        const messageList = document.getElementById('messageList');
+		        
+		        if (messages.length === 0) {
+		            messageList.innerHTML = `
+		                <div class="text-center py-10">
+		                    <i class="fa fa-comments-o text-2xl text-primary"></i>
+		                    <p class="mt-2 text-neutral-600">暂无留言，快来发表第一条吧！</p>
+		                </div>
+		            `;
+		            return;
+		        }
+		        
+		        // 按日期降序排序
+		        const sortedMessages = [...messages].sort((a, b) => new Date(b.date) - new Date(a.date));
+		        
+		        messageList.innerHTML = sortedMessages.map(message => `
+		            <div class="bg-white rounded-lg shadow-md p-6 hover:shadow-lg transition-shadow duration-300 relative">
+		                <button onclick="showDeleteConfirm(${message.id})" 
+		                        class="absolute top-4 right-4 text-neutral-400 hover:text-red-500 transition-colors"
+		                        title="删除留言">
+		                    <i class="fa fa-trash-o"></i>
+		                </button>
+		                <div class="flex justify-between items-start mb-3">
+		                    <h4 class="text-lg font-bold text-primary">${message.title}</h4>
+		                    <span class="text-sm text-neutral-500">${formatDate(message.date)}</span>
+		                </div>
+		                <div class="flex items-center mb-4">
+		                    <div class="w-8 h-8 bg-primary/10 rounded-full flex items-center justify-center mr-3">
+		                        <i class="fa fa-user text-primary"></i>
+		                    </div>
+		                    <div>
+		                        <p class="text-sm font-medium text-neutral-800">${message.name}</p>
+		                        <p class="text-xs text-neutral-500">${message.email}</p>
+		                    </div>
+		                </div>
+		                <p class="text-neutral-700">${message.content}</p>
+		            </div>
+		        `).join('');
+		    }
+		    
+		    // 显示删除确认对话框
+		    function showDeleteConfirm(messageId) {
+		        messageToDelete = messageId;
+		        const modal = document.getElementById('deleteConfirmModal');
+		        modal.classList.remove('opacity-0', 'pointer-events-none');
+		        modal.classList.add('opacity-100');
+		    }
+		    
+		    // 确认删除留言
+		    async function confirmDelete() {
+		        if (messageToDelete) {
+		            const currentMessages = await loadMessages();
+		            const updatedMessages = currentMessages.filter(message => message.id !== messageToDelete);
+		            
+		            const success = await saveMessages(updatedMessages);
+		            
+		            if (success) {
+		                await refreshMessages();
+		                showFeedback('删除成功', '留言已成功删除', 'success');
+		            }
+		        }
+		        cancelDelete();
+		    }
+		    
+		    // 取消删除
+		    function cancelDelete() {
+		        messageToDelete = null;
+		        const modal = document.getElementById('deleteConfirmModal');
+		        modal.classList.remove('opacity-100');
+		        modal.classList.add('opacity-0', 'pointer-events-none');
+		    }
+		    
+		    // 验证邮箱格式
+		    function validateEmail(email) {
+		        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+		        return re.test(email);
+		    }
+		    
+		    // 实时邮箱验证
+		    function validateEmailLive(input) {
+		        const errorElement = document.getElementById('emailError');
+		        const email = input.value.trim();
+		        
+		        if (email === '') {
+		            errorElement.classList.add('hidden');
+		            return;
+		        }
+		        
+		        if (!validateEmail(email)) {
+		            errorElement.classList.remove('hidden');
+		        } else {
+		            errorElement.classList.add('hidden');
+		        }
+		    }
+		    
+		    // 格式化日期
+		    function formatDate(dateString) {
+		        const date = new Date(dateString);
+		        return `${date.getFullYear()}-${padZero(date.getMonth()+1)}-${padZero(date.getDate())} ${padZero(date.getHours())}:${padZero(date.getMinutes())}`;
+		    }
+		    
+		    function padZero(num) {
+		        return num < 10 ? `0${num}` : num;
+		    }
+		    
+		    // 显示反馈弹窗
+		    function showFeedback(title, message, type = 'success') {
+		        const modal = document.getElementById('successModal');
+		        const icon = document.getElementById('modalIconSymbol');
+		        const iconContainer = document.getElementById('modalIcon');
+		        
+		        // 根据类型设置图标和颜色
+		        if (type === 'error') {
+		            icon.className = 'fa fa-exclamation-circle text-red-500 text-2xl';
+		            iconContainer.className = 'w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4';
+		        } else {
+		            icon.className = 'fa fa-check text-green-500 text-2xl';
+		            iconContainer.className = 'w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4';
+		        }
+		        
+		        document.getElementById('modalTitle').textContent = title;
+		        document.getElementById('modalMessage').textContent = message;
+		        
+		        modal.classList.remove('opacity-0', 'pointer-events-none');
+		        modal.classList.add('opacity-100');
+		        
+		        setTimeout(() => {
+		            hideSuccessModal();
+		        }, 3000);
+		    }
+		    
+		    // 隐藏弹窗
+		    function hideSuccessModal() {
+		        const modal = document.getElementById('successModal');
+		        modal.classList.remove('opacity-100');
+		        modal.classList.add('opacity-0', 'pointer-events-none');
+		    }
+		// 轮播图
+		const carouselItems = document.querySelectorAll('.carousel-item');
+		const carouselDots = document.querySelectorAll('.carousel-dot');
+		const carouselControls = document.querySelectorAll('.carousel-control');
+		let currentSlide = 0;
+		let slideInterval;
+		
+		function showSlide(index) {
+		    carouselItems.forEach(item => {
+		        item.classList.add('opacity-0');
+		        item.classList.remove('opacity-100');
+		    });
+		    carouselDots.forEach(dot => {
+		        dot.classList.add('opacity-50');
+		        dot.classList.remove('opacity-100');
+		    });
+		
+		    carouselItems[index].classList.add('opacity-100');
+		    carouselItems[index].classList.remove('opacity-0');
+		    carouselDots[index].classList.add('opacity-100');
+		    carouselDots[index].classList.remove('opacity-50');
+		}
+		
+		function nextSlide() {
+		    currentSlide = (currentSlide + 1) % carouselItems.length;
+		    showSlide(currentSlide);
+		}
+		
+		function prevSlide() {
+		    currentSlide = (currentSlide - 1 + carouselItems.length) % carouselItems.length;
+		    showSlide(currentSlide);
+		}
+		
+		function startSlideInterval() {
+		    slideInterval = setInterval(nextSlide, 3000);
+		}
+		
+		carouselDots.forEach((dot, index) => {
+		    dot.addEventListener('click', () => {
+		        currentSlide = index;
+		        showSlide(currentSlide);
+		        clearInterval(slideInterval);
+		        startSlideInterval();
+		    });
+		});
+		
+		carouselControls[0].addEventListener('click', () => {
+		    prevSlide();
+		    clearInterval(slideInterval);
+		    startSlideInterval();
+		});
+		
+		carouselControls[1].addEventListener('click', () => {
+		    nextSlide();
+		    clearInterval(slideInterval);
+		    startSlideInterval();
+		});
+		
+		startSlideInterval();
+        document.addEventListener('DOMContentLoaded', function() {
+            insertNavbarAndFooter();
+            setupSmoothScroll();
+            setupBackToTopButton();
+            setupCarousel();
+        });
+    </script>
+	<!-- 成功弹窗 -->
+</body>
+</html>

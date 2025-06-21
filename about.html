@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学校概况 - 华方大学</title>
+    <link rel="icon" type="img/png" href="img/147.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+	 <script src="script.js"></script>
+    <style>
+		/* 在about.html的<style>标签中添加 */
+[id] {
+    scroll-margin-top: 100px; /* 根据导航栏高度调整 */
+}
+        .tab-content {
+            display: none;
+        }
+        .tab-content.active {
+            display: block;
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .tab-button {
+            transition: all 0.3s ease;
+        }
+        .tab-button.active {
+            background-color: #3b82f6;
+            color: white;
+        }
+    </style>
+</head>
+<body class="font-sans text-neutral-700">
+    <!-- 顶部通知栏 -->
+    <div id="navbar"></div>
+
+    <!-- 学校概况内容 -->
+    <section class="py-8 md:py-16">
+        <div class="container mx-auto px-4 md:px-6" style="margin-top: 30px;">
+            <div class="text-center mb-12">
+                <h2 class="text-[clamp(1.8rem,3vw,2.5rem)] font-bold text-primary mb-4">学校概况</h2>
+                <p class="text-neutral-600 max-w-3xl mx-auto">华方大学是一所具有悠久历史和卓越学术声誉的高等学府，致力于培养具有全球视野、创新能力和社会责任感的未来领袖。</p>
+            </div>
+
+            <!-- 选项卡导航 -->
+            <div class="flex flex-wrap gap-2 mb-8 justify-center">
+                <button class="tab-button px-4 py-2 rounded-full border border-primary text-primary hover:bg-primary/10 active" data-tab="intro">学校简介</button>
+                <button class="tab-button px-4 py-2 rounded-full border border-primary text-primary hover:bg-primary/10" data-tab="history">历史沿革</button>
+                <button class="tab-button px-4 py-2 rounded-full border border-primary text-primary hover:bg-primary/10" data-tab="past-leaders">历任领导</button>
+                <button class="tab-button px-4 py-2 rounded-full border border-primary text-primary hover:bg-primary/10" data-tab="current-leaders">现任领导</button>
+                <button class="tab-button px-4 py-2 rounded-full border border-primary text-primary hover:bg-primary/10" data-tab="organization">组织机构</button>
+            </div>
+
+            <!-- 选项卡内容 -->
+            <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <!-- 学校简介 -->
+                <div id="intro" class="tab-content active">
+                    <div class="flex flex-col md:flex-row gap-8">
+                        <div class="md:w-1/2">
+                            <h3 class="text-2xl font-bold text-neutral-800 mb-6">学校简介</h3>
+                            <p class="text-neutral-600 mb-4">华方大学创办于1952年，是一所教育部直属的全国重点大学，是国家"双一流"建设高校。学校坐落于美丽的滨海城市，占地面积3000余亩，校园环境优美，教学设施先进。</p>
+                            <p class="text-neutral-600 mb-4">经过70余年的建设与发展，华方大学已成为一所学科门类齐全、师资力量雄厚、科研成果丰硕的综合性研究型大学。学校现有全日制在校生35000余人，其中本科生18000余人，研究生17000余人。</p>
+                            <p class="text-neutral-600 mb-4">学校设有28个学院，涵盖哲学、经济学、法学、教育学、文学、历史学、理学、工学、农学、医学、管理学、艺术学等12个学科门类。拥有国家重点学科15个，国家重点实验室5个，国家工程研究中心3个。</p>
+                            <div class="bg-blue-50 p-4 rounded-lg border-l-4 border-blue-500 mb-6">
+                                <h4 class="font-bold text-blue-800 mb-2">办学理念</h4>
+                                <p class="text-blue-700">"厚德博学，求是创新"是华方大学的校训，体现了学校培养德才兼备、具有创新精神和实践能力的高素质人才的办学理念。</p>
+                            </div>
+                        </div>
+                        <div class="md:w-1/2">
+                            <img src="img/招生.jpg" alt="华方大学校园全景" class="w-full h-auto rounded-lg shadow-md mb-4">
+                            <div class="grid grid-cols-2 gap-4">
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold text-gray-800 mb-1">学生人数</h4>
+                                    <p class="text-2xl font-bold text-primary">35,000+</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold text-gray-800 mb-1">教职工</h4>
+                                    <p class="text-2xl font-bold text-primary">4,200+</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold text-gray-800 mb-1">学科门类</h4>
+                                    <p class="text-2xl font-bold text-primary">12</p>
+                                </div>
+                                <div class="bg-gray-50 p-4 rounded-lg">
+                                    <h4 class="font-bold text-gray-800 mb-1">国家重点学科</h4>
+                                    <p class="text-2xl font-bold text-primary">15</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 历史沿革 -->
+                <div id="history" class="tab-content">
+                    <h3 class="text-2xl font-bold text-neutral-800 mb-6">历史沿革</h3>
+                    <div class="relative">
+                        <!-- 时间线 -->
+                        <div class="border-l-2 border-primary pl-8 pb-8 space-y-8">
+                            <div class="relative">
+                                <div class="absolute -left-11 top-0 w-6 h-6 rounded-full bg-primary border-4 border-white"></div>
+                                <div class="bg-gray-50 p-4 rounded-lg shadow-sm">
+                                    <h4 class="font-bold text-lg text-gray-800 mb-1">1952年</h4>
+                                    <p class="text-gray-600">华方大学前身华东工学院成立，由当时华东地区多所高校的工科院系合并组建。</p>
+                                </div>
+                            </div>
+                            <div class="relative">
+                                <div class="absolute -left-11 top-0 w-6 h-6 rounded-full bg-primary border-4 border-white"></div>
+                                <div class="bg-gray-50 p-4 rounded-lg shadow-sm">
+                                    <h4 class="font-bold text-lg text-gray-800 mb-1">1960年</h4>
+                                    <p class="text-gray-600">被确定为全国重点大学，开始招收研究生。</p>
+                                </div>
+                            </div>
+                            <div class="relative">
+                                <div class="absolute -left-11 top-0 w-6 h-6 rounded-full bg-primary border-4 border-white"></div>
+                                <div class="bg-gray-50 p-4 rounded-lg shadow-sm">
+                                    <h4 class="font-bold text-lg text-gray-800 mb-1">1978年</h4>
+                                    <p class="text-gray-600">恢复高考后首批招收本科生，并成为首批具有博士、硕士学位授予权的高校之一。</p>
+                                </div>
+                            </div>
+                            <div class="relative">
+                                <div class="absolute -left-11 top-0 w-6 h-6 rounded-full bg-primary border-4 border-white"></div>
+                                <div class="bg-gray-50 p-4 rounded-lg shadow-sm">
+                                    <h4 class="font-bold text-lg text-gray-800 mb-1">1995年</h4>
+                                    <p class="text-gray-600">更名为华方大学，标志着学校从工科院校向综合性大学转型。</p>
+                                </div>
+                            </div>
+                            <div class="relative">
+                                <div class="absolute -left-11 top-0 w-6 h-6 rounded-full bg-primary border-4 border-white"></div>
+                                <div class="bg-gray-50 p-4 rounded-lg shadow-sm">
+                                    <h4 class="font-bold text-lg text-gray-800 mb-1">2001年</h4>
+                                    <p class="text-gray-600">入选国家"985工程"重点建设高校。</p>
+                                </div>
+                            </div>
+                            <div class="relative">
+                                <div class="absolute -left-11 top-0 w-6 h-6 rounded-full bg-primary border-4 border-white"></div>
+                                <div class="bg-gray-50 p-4 rounded-lg shadow-sm">
+                                    <h4 class="font-bold text-lg text-gray-800 mb-1">2017年</h4>
+                                    <p class="text-gray-600">入选国家"双一流"建设高校名单，5个学科入选"双一流"建设学科。</p>
+                                </div>
+                            </div>
+                            <div class="relative">
+                                <div class="absolute -left-11 top-0 w-6 h-6 rounded-full bg-primary border-4 border-white"></div>
+                                <div class="bg-gray-50 p-4 rounded-lg shadow-sm">
+                                    <h4 class="font-bold text-lg text-gray-800 mb-1">2022年</h4>
+                                    <p class="text-gray-600">庆祝建校70周年，确立了建设世界一流大学的战略目标。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <img src="img/轮播图3.jpg" alt="华方大学历史照片" class="w-full h-auto rounded-lg shadow-md">
+                    </div>
+                </div>
+
+                <!-- 历任领导 -->
+                <div id="past-leaders" class="tab-content">
+                    <h3 class="text-2xl font-bold text-neutral-800 mb-6">历任领导</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="bg-gray-50 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex items-center mb-4">
+                                <div class="w-16 h-16 rounded-full bg-gray-200 mr-4 overflow-hidden">
+                                    <img src="img/leader1.jpg" alt="张明远校长" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">张明远</h4>
+                                    <p class="text-gray-600 text-sm">1952-1960年</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-600">华方大学首任校长，著名教育家，为学校初期建设奠定了坚实基础。</p>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex items-center mb-4">
+                                <div class="w-16 h-16 rounded-full bg-gray-200 mr-4 overflow-hidden">
+                                    <img src="img/leader2.jpg" alt="李建国校长" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">李建国</h4>
+                                    <p class="text-gray-600 text-sm">1960-1978年</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-600">带领学校度过特殊时期，恢复教学秩序，为后续发展创造条件。</p>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex items-center mb-4">
+                                <div class="w-16 h-16 rounded-full bg-gray-200 mr-4 overflow-hidden">
+                                    <img src="img/leader3.jpg" alt="王学文校长" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">王学文</h4>
+                                    <p class="text-gray-600 text-sm">1978-1985年</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-600">改革开放后首任校长，推动学校恢复研究生教育，扩大国际交流。</p>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex items-center mb-4">
+                                <div class="w-16 h-16 rounded-full bg-gray-200 mr-4 overflow-hidden">
+                                    <img src="img/leader4.jpg" alt="陈志强校长" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">陈志强</h4>
+                                    <p class="text-gray-600 text-sm">1985-1995年</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-600">推动学校从工科院校向综合性大学转型，增设文理学科。</p>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex items-center mb-4">
+                                <div class="w-16 h-16 rounded-full bg-gray-200 mr-4 overflow-hidden">
+                                    <img src="img/leader5.jpg" alt="赵立新校长" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">赵立新</h4>
+                                    <p class="text-gray-600 text-sm">1995-2005年</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-600">领导学校更名为华方大学，推动"211工程"建设。</p>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow">
+                            <div class="flex items-center mb-4">
+                                <div class="w-16 h-16 rounded-full bg-gray-200 mr-4 overflow-hidden">
+                                    <img src="img/leader6.jpg" alt="周明华校长" class="w-full h-full object-cover">
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-lg">周明华</h4>
+                                    <p class="text-gray-600 text-sm">2005-2015年</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-600">推动学校"985工程"建设，大幅提升科研水平和国际影响力。</p>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <img src="img/会谈.jpg" alt="历任领导合影" class="w-full h-auto rounded-lg shadow-md">
+                    </div>
+                </div>
+
+                <!-- 现任领导 -->
+                <div id="current-leaders" class="tab-content">
+                    <h3 class="text-2xl font-bold text-neutral-800 mb-6">现任领导</h3>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                            <div class="flex flex-col md:flex-row">
+                                <div class="md:w-1/3">
+                                    <img src="img/current-leader1.jpg" alt="现任校长" class="w-full h-full object-cover">
+                                </div>
+                                <div class="md:w-2/3 p-6">
+                                    <h4 class="font-bold text-xl mb-2">刘伟</h4>
+                                    <p class="text-gray-600 mb-2">校长、党委副书记</p>
+                                    <p class="text-gray-600 mb-4">1965年生，教授，博士生导师，中国科学院院士。2015年起任华方大学校长。</p>
+                                    <div class="border-t border-gray-200 pt-4">
+                                        <h5 class="font-bold text-gray-800 mb-2">主要职责</h5>
+                                        <ul class="list-disc list-inside text-gray-600 space-y-1">
+                                            <li>全面负责学校行政工作</li>
+                                            <li>主管发展规划、学科建设、财务工作</li>
+                                            <li>联系理学院、工学院</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                            <div class="flex flex-col md:flex-row">
+                                <div class="md:w-1/3">
+                                    <img src="img/current-leader2.jpg" alt="现任党委书记" class="w-full h-full object-cover">
+                                </div>
+                                <div class="md:w-2/3 p-6">
+                                    <h4 class="font-bold text-xl mb-2">张建华</h4>
+                                    <p class="text-gray-600 mb-2">党委书记</p>
+                                    <p class="text-gray-600 mb-4">1963年生，研究员。2016年起任华方大学党委书记。</p>
+                                    <div class="border-t border-gray-200 pt-4">
+                                        <h5 class="font-bold text-gray-800 mb-2">主要职责</h5>
+                                        <ul class="list-disc list-inside text-gray-600 space-y-1">
+                                            <li>全面负责学校党委工作</li>
+                                            <li>主管干部工作、统战工作</li>
+                                            <li>联系马克思主义学院、文学院</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <div class="bg-gray-50 rounded-lg p-6 shadow-sm">
+                            <h4 class="font-bold text-lg mb-2">李明</h4>
+                            <p class="text-gray-600 mb-2">党委副书记</p>
+                            <p class="text-gray-600 text-sm">分管组织、宣传、学生工作</p>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-6 shadow-sm">
+                            <h4 class="font-bold text-lg mb-2">王强</h4>
+                            <p class="text-gray-600 mb-2">常务副校长</p>
+                            <p class="text-gray-600 text-sm">分管人事、财务、后勤工作</p>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-6 shadow-sm">
+                            <h4 class="font-bold text-lg mb-2">陈芳</h4>
+                            <p class="text-gray-600 mb-2">副校长</p>
+                            <p class="text-gray-600 text-sm">分管本科教学、国际交流</p>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-6 shadow-sm">
+                            <h4 class="font-bold text-lg mb-2">赵立</h4>
+                            <p class="text-gray-600 mb-2">副校长</p>
+                            <p class="text-gray-600 text-sm">分管科研、研究生教育</p>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-6 shadow-sm">
+                            <h4 class="font-bold text-lg mb-2">周明</h4>
+                            <p class="text-gray-600 mb-2">副校长</p>
+                            <p class="text-gray-600 text-sm">分管资产、基建、安全保卫</p>
+                        </div>
+                        <div class="bg-gray-50 rounded-lg p-6 shadow-sm">
+                            <h4 class="font-bold text-lg mb-2">吴华</h4>
+                            <p class="text-gray-600 mb-2">纪委书记</p>
+                            <p class="text-gray-600 text-sm">分管纪检监察、审计工作</p>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <img src="img/e54a7c84221529c4fa4e955f0aec463.jpg" alt="现任领导集体照" class="w-full h-auto rounded-lg shadow-md">
+                    </div>
+                </div>
+
+                <!-- 组织机构 -->
+                <div id="organization" class="tab-content">
+                    <h3 class="text-2xl font-bold text-neutral-800 mb-6">组织机构</h3>
+                    <div class="bg-blue-50 p-6 rounded-lg mb-8">
+                        <h4 class="font-bold text-blue-800 mb-4">华方大学组织结构图</h4>
+                        <img src="img/c58239582ed832b133ae51796a1dcca.jpg" alt="华方大学组织结构图" class="w-full h-auto rounded-lg shadow-md">
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        <div>
+                            <h4 class="font-bold text-xl text-gray-800 mb-4 border-b pb-2">党政管理机构</h4>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fa fa-building text-primary mt-1 mr-2"></i>
+                                    <span>党委办公室</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-building text-primary mt-1 mr-2"></i>
+                                    <span>校长办公室</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-building text-primary mt-1 mr-2"></i>
+                                    <span>组织部</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-building text-primary mt-1 mr-2"></i>
+                                    <span>宣传部</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-building text-primary mt-1 mr-2"></i>
+                                    <span>发展规划处</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-building text-primary mt-1 mr-2"></i>
+                                    <span>教务处</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-building text-primary mt-1 mr-2"></i>
+                                    <span>科研处</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-building text-primary mt-1 mr-2"></i>
+                                    <span>人事处</span>
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-xl text-gray-800 mb-4 border-b pb-2">教学科研单位</h4>
+                            <ul class="space-y-3">
+                                <li class="flex items-start">
+                                    <i class="fa fa-graduation-cap text-primary mt-1 mr-2"></i>
+                                    <span>理学院</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-graduation-cap text-primary mt-1 mr-2"></i>
+                                    <span>工学院</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-graduation-cap text-primary mt-1 mr-2"></i>
+                                    <span>文学院</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-graduation-cap text-primary mt-1 mr-2"></i>
+                                    <span>医学院</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-graduation-cap text-primary mt-1 mr-2"></i>
+                                    <span>经济管理学院</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-graduation-cap text-primary mt-1 mr-2"></i>
+                                    <span>法学院</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-graduation-cap text-primary mt-1 mr-2"></i>
+                                    <span>艺术学院</span>
+                                </li>
+                                <li class="flex items-start">
+                                    <i class="fa fa-graduation-cap text-primary mt-1 mr-2"></i>
+                                    <span>马克思主义学院</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <h4 class="font-bold text-xl text-gray-800 mb-4 border-b pb-2">直属单位</h4>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h5 class="font-bold text-gray-800 mb-1">图书馆</h5>
+                                <p class="text-gray-600 text-sm">馆藏纸质图书450万册，电子图书320万册</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h5 class="font-bold text-gray-800 mb-1">信息中心</h5>
+                                <p class="text-gray-600 text-sm">负责校园信息化建设与网络安全</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h5 class="font-bold text-gray-800 mb-1">出版社</h5>
+                                <p class="text-gray-600 text-sm">年出版图书500余种，学术期刊12种</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h5 class="font-bold text-gray-800 mb-1">校医院</h5>
+                                <p class="text-gray-600 text-sm">二级甲等医院，为师生提供医疗服务</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h5 class="font-bold text-gray-800 mb-1">后勤集团</h5>
+                                <p class="text-gray-600 text-sm">负责校园餐饮、物业、维修等服务</p>
+                            </div>
+                            <div class="bg-gray-50 p-4 rounded-lg">
+                                <h5 class="font-bold text-gray-800 mb-1">档案馆</h5>
+                                <p class="text-gray-600 text-sm">保存学校历史档案与重要文献</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 页脚 -->
+    <div id="footer"></div>
+
+    <script>
+        // 在about.html的<script>标签中修改/添加以下代码
+        document.addEventListener('DOMContentLoaded', function() {
+            // 加载导航栏和页脚
+            insertNavbarAndFooter();
+            
+            // 选项卡功能
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabContents = document.querySelectorAll('.tab-content');
+            
+            // 激活指定选项卡的函数
+            function activateTab(tabId) {
+                tabButtons.forEach(btn => btn.classList.remove('active'));
+                tabContents.forEach(content => content.classList.remove('active'));
+                
+                const targetButton = document.querySelector(`.tab-button[data-tab="${tabId}"]`);
+                const targetContent = document.getElementById(tabId);
+                
+                if(targetButton && targetContent) {
+                    targetButton.classList.add('active');
+                    targetContent.classList.add('active');
+                    
+                    // 滚动到目标位置（考虑固定导航栏的高度）
+                    setTimeout(() => {
+                        const offset = 100; // 根据导航栏高度调整
+                        const targetPosition = targetContent.offsetTop - offset;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }, 100);
+                }
+            }
+            
+            // 初始化选项卡点击事件
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const tabId = button.getAttribute('data-tab');
+                    activateTab(tabId);
+                    window.location.hash = tabId;
+                });
+            });
+            
+            // 处理初始哈希和哈希变化
+            function handleHashChange() {
+                if (window.location.hash) {
+                    const tabId = window.location.hash.substring(1);
+                    activateTab(tabId);
+                }
+            }
+            
+            // 初始加载时检查
+            handleHashChange();
+            
+            // 监听哈希变化
+            window.addEventListener('hashchange', handleHashChange);
+            
+            // 其他功能
+            setupSmoothScroll();
+            setupBackToTopButton();
+            setupCarousel();
+        });
+    </script>
+	<script>
+	    document.addEventListener('DOMContentLoaded', function() {
+	        insertNavbarAndFooter();
+	        setupSmoothScroll();
+	        setupBackToTopButton();
+	        setupCarousel();
+	    });
+	</script>
+</body>
+</html>

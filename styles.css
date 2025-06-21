@@ -1,0 +1,18 @@
+@layer utilities {
+    .content-auto {
+        content-visibility: auto;
+    }
+    .text-shadow {
+        text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .bg-blur {
+        backdrop-filter: blur(8px);
+    }
+    .transition-navbar {
+        transition: background-color 0.3s ease, padding 0.3s ease;
+    }
+}
+.sticky {
+    position: -webkit-sticky;
+    position: sticky;
+}

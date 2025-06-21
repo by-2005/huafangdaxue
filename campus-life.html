@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>校园生活 - 华方大学</title>
+    <link rel="icon" type="img/png" href="img/147.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
+    <style>
+		
+		/* 在about.html的<style>标签中添加 */
+		[id] {
+		    scroll-margin-top: 100px; /* 根据导航栏高度调整 */
+		}
+        .section-anchor {
+            scroll-margin-top: 100px;
+        }
+        .active-section {
+            color: #3b82f6;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body class="font-sans text-neutral-700">
+    <!-- 顶部导航栏 -->
+   
+<div id="navbar"></div>
+
+    <!-- 校园生活内容 -->
+    <div class="container mx-auto px-4 md:px-6 py-8">
+        <!-- 侧边导航栏 -->
+        <div class="flex flex-col md:flex-row gap-8">
+            <div class="md:w-1/4 sticky top-20 self-start">
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h3 class="text-xl font-bold text-neutral-800 mb-4 border-b pb-2">校园生活导航</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#student-affairs" class="block py-2 px-2 hover:bg-gray-100 rounded transition-colors nav-link" data-section="student-affairs">学生事务</a></li>
+                        <li><a href="#awards" class="block py-2 px-2 hover:bg-gray-100 rounded transition-colors nav-link" data-section="awards">奖助体系</a></li>
+                        <li><a href="#mental-health" class="block py-2 px-2 hover:bg-gray-100 rounded transition-colors nav-link" data-section="mental-health">心理健康</a></li>
+                        <li><a href="#career-guidance" class="block py-2 px-2 hover:bg-gray-100 rounded transition-colors nav-link" data-section="career-guidance">就业指导</a></li>
+                        <li><a href="#campus-life" class="block py-2 px-2 hover:bg-gray-100 rounded transition-colors nav-link" data-section="campus-life">校园生活</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- 主要内容区域 -->
+            <div class="md:w-3/4 sticky top-20 self-start">
+                <!-- 学生事务 --><br>
+                <section id="student-affairs" class="section-anchor bg-white rounded-lg shadow-md p-6 mb-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                            <i class="fa fa-users text-primary text-2xl"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-neutral-800">学生事务</h2>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3 text-primary">学籍管理</h3>
+                            <p class="text-neutral-600 mb-4">华方大学学生事务部门提供全面的学籍管理服务，包括入学注册、学籍异动、毕业审核等。我们致力于为学生提供高效便捷的服务，确保学籍信息的准确性和完整性。</p>
+                            <ul class="list-disc pl-5 space-y-2 text-neutral-600">
+                                <li>新生入学注册服务</li>
+                                <li>学籍信息查询与变更</li>
+                                <li>转专业、休学、复学等手续办理</li>
+                                <li>毕业资格审核与证书发放</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3 text-primary">住宿服务</h3>
+                            <p class="text-neutral-600 mb-4">我们为学生提供安全、舒适的住宿环境，宿舍配备完善的生活设施，并有专业的管理团队24小时值班，确保学生的住宿安全和生活质量。</p>
+                            <div class="bg-gray-100 p-4 rounded-lg">
+                                <h4 class="font-medium mb-2">宿舍申请流程：</h4>
+                                <ol class="list-decimal pl-5 space-y-1 text-neutral-600">
+                                    <li>登录校园门户系统</li>
+                                    <li>进入"住宿服务"模块</li>
+                                    <li>填写住宿申请表</li>
+                                    <li>等待分配结果通知</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <h3 class="text-xl font-semibold mb-4 text-primary">服务时间与地点</h3>
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full bg-white border border-gray-200">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th class="py-2 px-4 border">服务项目</th>
+                                        <th class="py-2 px-4 border">办公地点</th>
+                                        <th class="py-2 px-4 border">办公时间</th>
+                                        <th class="py-2 px-4 border">联系电话</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="py-2 px-4 border">学籍管理</td>
+                                        <td class="py-2 px-4 border">行政楼201室</td>
+                                        <td class="py-2 px-4 border">周一至周五 8:30-17:00</td>
+                                        <td class="py-2 px-4 border">010-12345678</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 px-4 border">住宿服务</td>
+                                        <td class="py-2 px-4 border">学生公寓1号楼101室</td>
+                                        <td class="py-2 px-4 border">周一至周日 9:00-21:00</td>
+                                        <td class="py-2 px-4 border">010-87654321</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 奖助体系 -->
+                <section id="awards" class="section-anchor bg-white rounded-lg shadow-md p-6 mb-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                            <i class="fa fa-gift text-primary text-2xl"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-neutral-800">奖助体系</h2>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3 text-primary">奖学金</h3>
+                            <p class="text-neutral-600 mb-4">华方大学设立多种奖学金，奖励品学兼优的学生，包括国家奖学金、校级奖学金、企业奖学金等，激励学生勤奋学习、全面发展。</p>
+                            <div class="bg-blue-50 p-4 rounded-lg mb-4">
+                                <h4 class="font-medium text-blue-800 mb-2">奖学金申请条件：</h4>
+                                <ul class="list-disc pl-5 space-y-1 text-blue-700">
+                                    <li>学习成绩排名专业前10%</li>
+                                    <li>无违纪记录</li>
+                                    <li>积极参与社会实践和公益活动</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3 text-primary">助学金</h3>
+                            <p class="text-neutral-600 mb-4">为帮助家庭经济困难学生顺利完成学业，学校提供国家助学金、社会捐助助学金等多种形式的资助，确保不让任何学生因经济困难而失学。</p>
+                            <div class="bg-green-50 p-4 rounded-lg">
+                                <h4 class="font-medium text-green-800 mb-2">助学金申请流程：</h4>
+                                <ol class="list-decimal pl-5 space-y-1 text-green-700">
+                                    <li>提交家庭经济困难证明</li>
+                                    <li>填写助学金申请表</li>
+                                    <li>院系审核推荐</li>
+                                    <li>学校评审公示</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <h3 class="text-xl font-semibold mb-4 text-primary">2023-2024学年奖助学金一览</h3>
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full bg-white border border-gray-200">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th class="py-2 px-4 border">奖项名称</th>
+                                        <th class="py-2 px-4 border">金额(元)</th>
+                                        <th class="py-2 px-4 border">名额</th>
+                                        <th class="py-2 px-4 border">申请时间</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="py-2 px-4 border">国家奖学金</td>
+                                        <td class="py-2 px-4 border">8000</td>
+                                        <td class="py-2 px-4 border">30</td>
+                                        <td class="py-2 px-4 border">9月1日-9月30日</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 px-4 border">校长奖学金</td>
+                                        <td class="py-2 px-4 border">5000</td>
+                                        <td class="py-2 px-4 border">50</td>
+                                        <td class="py-2 px-4 border">9月1日-9月30日</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 px-4 border">国家助学金</td>
+                                        <td class="py-2 px-4 border">2000-4000</td>
+                                        <td class="py-2 px-4 border">500</td>
+                                        <td class="py-2 px-4 border">10月8日-10月31日</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 心理健康 -->
+                <section id="mental-health" class="section-anchor bg-white rounded-lg shadow-md p-6 mb-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                            <i class="fa fa-heart text-primary text-2xl"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-neutral-800">心理健康</h2>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3 text-primary">心理咨询</h3>
+                            <p class="text-neutral-600 mb-4">学校心理健康中心配备专业心理咨询师，为学生提供一对一心理咨询服务，帮助学生解决学习、生活、情感等方面的心理困扰。</p>
+                            <div class="bg-purple-50 p-4 rounded-lg mb-4">
+                                <h4 class="font-medium text-purple-800 mb-2">咨询预约方式：</h4>
+                                <ul class="list-disc pl-5 space-y-1 text-purple-700">
+                                    <li>电话预约：010-12345678</li>
+                                    <li>网上预约：校园门户心理健康板块</li>
+                                    <li>现场预约：心理健康中心前台</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3 text-primary">心理健康教育</h3>
+                            <p class="text-neutral-600 mb-4">定期举办心理健康讲座、工作坊和团体辅导活动，普及心理健康知识，提升学生心理调适能力，预防心理问题的发生。</p>
+                            <div class="bg-yellow-50 p-4 rounded-lg">
+                                <h4 class="font-medium text-yellow-800 mb-2">近期活动：</h4>
+                                <ul class="list-disc pl-5 space-y-1 text-yellow-700">
+                                    <li>5月25日：压力管理工作坊</li>
+                                    <li>6月10日：人际关系讲座</li>
+                                    <li>6月20日：正念冥想体验课</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <h3 class="text-xl font-semibold mb-4 text-primary">心理危机干预</h3>
+                        <div class="bg-red-50 p-6 rounded-lg">
+                            <h4 class="font-bold text-red-800 mb-3">24小时心理援助热线：010-87654321</h4>
+                            <p class="text-red-700 mb-4">当您或您身边的同学遇到紧急心理危机时，请立即拨打我们的24小时心理援助热线，专业心理咨询师将为您提供及时帮助。</p>
+                            <div class="grid md:grid-cols-2 gap-4">
+                                <div>
+                                    <h5 class="font-medium text-red-800 mb-2">危机干预范围：</h5>
+                                    <ul class="list-disc pl-5 space-y-1 text-red-700">
+                                        <li>自杀倾向或行为</li>
+                                        <li>严重抑郁状态</li>
+                                        <li>急性应激反应</li>
+                                    </ul>
+                                </div>
+                                <div>
+                                    <h5 class="font-medium text-red-800 mb-2">校外心理援助资源：</h5>
+                                    <ul class="list-disc pl-5 space-y-1 text-red-700">
+                                        <li>北京市心理援助热线：010-82951332</li>
+                                        <li>全国心理援助热线：12320</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 就业指导 -->
+                <section id="career-guidance" class="section-anchor bg-white rounded-lg shadow-md p-6 mb-8">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                            <i class="fa fa-briefcase text-primary text-2xl"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-neutral-800">就业指导</h2>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3 text-primary">职业规划</h3>
+                            <p class="text-neutral-600 mb-4">就业指导中心提供职业测评、职业咨询等服务，帮助学生了解自身职业兴趣和能力，制定个性化的职业发展规划。</p>
+                            <div class="bg-indigo-50 p-4 rounded-lg mb-4">
+                                <h4 class="font-medium text-indigo-800 mb-2">职业测评工具：</h4>
+                                <ul class="list-disc pl-5 space-y-1 text-indigo-700">
+                                    <li>霍兰德职业兴趣测试</li>
+                                    <li>MBTI性格测试</li>
+                                    <li>职业锚测试</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3 text-primary">就业服务</h3>
+                            <p class="text-neutral-600 mb-4">组织校园招聘会、企业宣讲会等活动，提供就业信息发布、简历指导、面试技巧培训等服务，搭建学生与用人单位之间的桥梁。</p>
+                            <div class="bg-teal-50 p-4 rounded-lg">
+                                <h4 class="font-medium text-teal-800 mb-2">2023年就业数据：</h4>
+                                <ul class="list-disc pl-5 space-y-1 text-teal-700">
+                                    <li>就业率：96.5%</li>
+                                    <li>平均起薪：6500元/月</li>
+                                    <li>500强企业就业比例：35%</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <h3 class="text-xl font-semibold mb-4 text-primary">招聘会日程</h3>
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full bg-white border border-gray-200">
+                                <thead class="bg-gray-50">
+                                    <tr>
+                                        <th class="py-2 px-4 border">日期</th>
+                                        <th class="py-2 px-4 border">时间</th>
+                                        <th class="py-2 px-4 border">活动名称</th>
+                                        <th class="py-2 px-4 border">地点</th>
+                                        <th class="py-2 px-4 border">参与企业</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td class="py-2 px-4 border">2023-10-15</td>
+                                        <td class="py-2 px-4 border">9:00-16:00</td>
+                                        <td class="py-2 px-4 border">秋季大型招聘会</td>
+                                        <td class="py-2 px-4 border">体育馆</td>
+                                        <td class="py-2 px-4 border">120家</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 px-4 border">2023-11-05</td>
+                                        <td class="py-2 px-4 border">14:00-17:00</td>
+                                        <td class="py-2 px-4 border">IT行业专场</td>
+                                        <td class="py-2 px-4 border">学术报告厅</td>
+                                        <td class="py-2 px-4 border">25家</td>
+                                    </tr>
+                                    <tr>
+                                        <td class="py-2 px-4 border">2023-11-20</td>
+                                        <td class="py-2 px-4 border">9:00-12:00</td>
+                                        <td class="py-2 px-4 border">金融行业专场</td>
+                                        <td class="py-2 px-4 border">商学院大楼</td>
+                                        <td class="py-2 px-4 border">30家</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 校园生活 -->
+                <section id="campus-life" class="section-anchor bg-white rounded-lg shadow-md p-6">
+                    <div class="flex items-center mb-6">
+                        <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mr-4">
+                            <i class="fa fa-school text-primary text-2xl"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-neutral-800">校园生活</h2>
+                    </div>
+                    <div class="grid md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3 text-primary">学生社团</h3>
+                            <p class="text-neutral-600 mb-4">学校有100多个学生社团，涵盖学术科技、文化艺术、体育健身、公益服务等多个领域，为学生提供展示才华、发展兴趣的平台。</p>
+                            <div class="bg-pink-50 p-4 rounded-lg mb-4">
+                                <h4 class="font-medium text-pink-800 mb-2">热门社团：</h4>
+                                <ul class="list-disc pl-5 space-y-1 text-pink-700">
+                                    <li>机器人协会</li>
+                                    <li>辩论社</li>
+                                    <li>摄影协会</li>
+                                    <li>街舞社</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-semibold mb-3 text-primary">校园活动</h3>
+                            <p class="text-neutral-600 mb-4">丰富多彩的校园活动贯穿全年，包括开学典礼、校庆活动、文化艺术节、运动会等，营造积极向上的校园文化氛围。</p>
+                            <div class="bg-orange-50 p-4 rounded-lg">
+                                <h4 class="font-medium text-orange-800 mb-2">年度重大活动：</h4>
+                                <ul class="list-disc pl-5 space-y-1 text-orange-700">
+                                    <li>3月：校园歌手大赛</li>
+                                    <li>5月：文化艺术节</li>
+                                    <li>10月：校运动会</li>
+                                    <li>12月：新年晚会</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <h3 class="text-xl font-semibold mb-4 text-primary">校园设施</h3>
+                        <div class="grid md:grid-cols-3 gap-4">
+                            <div class="bg-white border border-gray-200 rounded-lg p-4">
+                                <h4 class="font-medium mb-2">图书馆</h4>
+                                <p class="text-sm text-gray-600">藏书200万册，座位2000个，开放时间7:00-22:00</p>
+                            </div>
+                            <div class="bg-white border border-gray-200 rounded-lg p-4">
+                                <h4 class="font-medium mb-2">体育馆</h4>
+                                <p class="text-sm text-gray-600">包含游泳馆、篮球场、健身房等设施</p>
+                            </div>
+                            <div class="bg-white border border-gray-200 rounded-lg p-4">
+                                <h4 class="font-medium mb-2">学生活动中心</h4>
+                                <p class="text-sm text-gray-600">社团活动、排练、会议的多功能场所</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-8">
+                        <h3 class="text-xl font-semibold mb-4 text-primary">校园地图</h3>
+                        <div class="bg-gray-200 h-64 rounded-lg flex items-center justify-center">
+                            <p class="text-gray-500">校园地图示意图</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+     <div id="footer"></div>
+    <script>
+		// script.js
+		function insertNavbarAndFooter() {
+		    // 加载导航栏
+		    fetch('navbar.html')
+		        .then(response => response.text())
+		        .then(html => {
+		            document.getElementById('navbar').innerHTML = html;
+		        })
+		        .catch(err => console.error('加载导航栏失败:', err));
+		
+		    // 加载页脚
+		    fetch('footer.html')
+		        .then(response => response.text())
+		        .then(html => {
+		            document.getElementById('footer').innerHTML = html;
+		        })
+		        .catch(err => console.error('加载页脚失败:', err));
+		}
+        document.addEventListener('DOMContentLoaded', function() {
+            // 设置导航链接点击效果
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            // 设置初始激活状态
+            setActiveNavLink();
+            
+            // 监听滚动事件
+            window.addEventListener('scroll', function() {
+                setActiveNavLink();
+            });
+            
+            // 为导航链接添加点击事件
+            navLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+            
+            // 设置当前激活的导航链接
+            function setActiveNavLink() {
+                const scrollPosition = window.scrollY + 100;
+                
+                document.querySelectorAll('section').forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.offsetHeight;
+                    
+                    if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                        const sectionId = section.getAttribute('id');
+                        navLinks.forEach(link => {
+                            if (link.getAttribute('href') === `#${sectionId}`) {
+                                link.classList.add('active-section');
+                            } else {
+                                link.classList.remove('active-section');
+                            }
+                        });
+                    }
+                });
+            }
+        });
+    </script>
+	<script>
+	    document.addEventListener('DOMContentLoaded', function() {
+	        insertNavbarAndFooter();
+	        setupSmoothScroll();
+	        setupBackToTopButton();
+	        setupCarousel();
+	    });
+	</script>
+</body>
+</html>
